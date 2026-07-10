@@ -149,7 +149,7 @@
     </div>
 
   <script>
-    fetch('version.json')
+    fetch('version.json?_=' + Date.now())
       .then(r => r.json())
       .then(d => {
         document.querySelectorAll('[data-version]').forEach(el => {
