@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Histórico de Versões - TTS_Muito_Foda</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gray-900">
+  <div class="container mx-auto px-4 py-12 max-w-4xl">
+    <div class="bg-gray-800 rounded-2xl shadow-2xl p-8">
+      <div class="flex items-center gap-4 mb-8">
+        <a href="index.html" class="text-gray-400 hover:text-white transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+        </a>
+        <h1 class="text-3xl font-bold text-white">Histórico de Versões</h1>
+      </div>
+
+      <div class="space-y-8">
+        <!-- v1.0.2 -->
+        <div class="border-l-4 border-blue-500 pl-6">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="bg-blue-600 text-white text-sm font-bold px-3 py-1 rounded-full">v1.0.2</span>
+            <span class="text-gray-400 text-sm">Versão atual</span>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-2">Controle de Versionamento</h3>
+          <ul class="text-gray-300 space-y-2">
+            <li class="flex items-start gap-2">
+              <span class="text-blue-400 mt-1">•</span>
+              <span>Display da versão atual na interface</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-blue-400 mt-1">•</span>
+              <span>Verificação automática de atualizações</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-blue-400 mt-1">•</span>
+              <span>Botão de update com ícone e animação</span>
+            </li>
+          </ul>
+          <h3 class="text-xl font-semibold text-white mb-2 mt-4">Melhor Tratamento de Erros</h3>
+          <ul class="text-gray-300 space-y-2">
+            <li class="flex items-start gap-2">
+              <span class="text-blue-400 mt-1">•</span>
+              <span>Mensagens de erro completas e detalhadas</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-blue-400 mt-1">•</span>
+              <span>Botão para copiar erro completo na barra de status</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- v1.0.1 -->
+        <div class="border-l-4 border-gray-600 pl-6">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="bg-gray-700 text-white text-sm font-bold px-3 py-1 rounded-full">v1.0.1</span>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-2">Funcionalidades Iniciais</h3>
+          <ul class="text-gray-300 space-y-2">
+            <li class="flex items-start gap-2">
+              <span class="text-gray-500 mt-1">•</span>
+              <span>Leitura de chat ao vivo do YouTube via API</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-500 mt-1">•</span>
+              <span>Sintetização de voz com ElevenLabs (vozes variadas)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-500 mt-1">•</span>
+              <span>Fallback automático para edge-tts (Thalita, português BR)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-500 mt-1">•</span>
+              <span>Suporte a múltiplas chaves de API com rodízio automático</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-500 mt-1">•</span>
+              <span>Barra de progresso do consumo de caracteres ElevenLabs</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-500 mt-1">•</span>
+              <span>Controle de volume com scroll do mouse</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-500 mt-1">•</span>
+              <span>Substituição de palavras no TTS</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-500 mt-1">•</span>
+              <span>Bloqueio de usuários específicos</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-500 mt-1">•</span>
+              <span>Filtro de palavras banidas</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-500 mt-1">•</span>
+              <span>Prefixo opcional para filtrar mensagens</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-500 mt-1">•</span>
+              <span>Detecção de risadas com áudio personalizado</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-500 mt-1">•</span>
+              <span>Modo "apenas Thalita" (edge-tts sem ElevenLabs)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-500 mt-1">•</span>
+              <span>Persistência de configurações (URL, chaves, bloqueios, substituições)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-500 mt-1">•</span>
+              <span>Prevenção de múltiplas instâncias</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-500 mt-1">•</span>
+              <span>Interface com abas (Chat, Config, API's, Substituições)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-500 mt-1">•</span>
+              <span>Indicador visual da mensagem sendo lida</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gray-500 mt-1">•</span>
+              <span>Botão para copiar status da barra inferior</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <footer class="mt-8 flex justify-center gap-6">
+      <a href="https://github.com/viniciustixu" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+      </a>
+      <a href="https://discord.com/users/322555866374995978" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.36-.76-.54-1.09-.01-.02-.04-.03-.07-.03-1.5.26-2.93.71-4.27 1.33-.01 0-.02.01-.03.02-2.72 4.07-3.47 8.03-3.1 11.95 0 .02.01.04.03.05 1.8 1.32 3.53 2.12 5.24 2.65.03.01.06 0 .07-.02.4-.55.76-1.13 1.07-1.74.02-.04 0-.08-.04-.09-.57-.22-1.11-.48-1.64-.78-.04-.02-.04-.08-.01-.11.11-.08.22-.17.33-.25.02-.02.05-.02.07-.01 3.44 1.57 7.15 1.57 10.55 0 .02-.01.05-.01.07.01.11.09.22.17.33.26.04.03.04.09-.01.11-.52.31-1.07.56-1.64.78-.04.01-.05.06-.04.09.32.61.68 1.19 1.07 1.74.03.01.06.02.09.01 1.72-.53 3.45-1.33 5.25-2.65.02-.01.03-.03.03-.05.44-4.53-.73-8.46-3.1-11.95-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12 0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12 0 1.17-.83 2.12-1.89 2.12z"/>
+        </svg>
+      </a>
+    </footer>
+  </div>
+</body>
+</html>
