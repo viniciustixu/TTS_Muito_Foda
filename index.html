@@ -133,6 +133,7 @@
       .then(d => {
         document.title = 'TTS_v' + d.version;
         document.getElementById('download-version').textContent = 'TTS_v' + d.version;
+        document.querySelector('a[download]').href = 'TTS_v' + d.version + '.zip';
       })
       .catch(() => {});
   </script>
