@@ -21,10 +21,10 @@
 
       <div class="space-y-8">
         <!-- v1.0.2 -->
-        <div class="border-l-4 border-blue-500 pl-6">
+        <div class="border-l-4 border-blue-500 pl-6" data-version="1.0.2">
           <div class="flex items-center gap-3 mb-3">
             <span class="bg-blue-600 text-white text-sm font-bold px-3 py-1 rounded-full">v1.0.2</span>
-            <span class="text-gray-400 text-sm">Versão atual</span>
+            <span class="version-status text-gray-400 text-sm">Versão atual</span>
           </div>
           <h3 class="text-xl font-semibold text-white mb-2">Controle de Versionamento</h3>
           <ul class="text-gray-300 space-y-2">
@@ -55,7 +55,7 @@
         </div>
 
         <!-- v1.0.1 -->
-        <div class="border-l-4 border-gray-600 pl-6">
+        <div class="border-l-4 border-gray-600 pl-6" data-version="1.0.1">
           <div class="flex items-center gap-3 mb-3">
             <span class="bg-gray-700 text-white text-sm font-bold px-3 py-1 rounded-full">v1.0.1</span>
           </div>
@@ -146,6 +146,33 @@
         </svg>
       </a>
     </footer>
-  </div>
+    </div>
+
+  <script>
+    fetch('version.json')
+      .then(r => r.json())
+      .then(d => {
+        document.querySelectorAll('[data-version]').forEach(el => {
+          const isCurrent = el.dataset.version === d.version;
+          const badge = el.querySelector('.rounded-full');
+          const statusEl = el.querySelector('.version-status');
+
+          el.classList.toggle('border-blue-500', isCurrent);
+          el.classList.toggle('border-gray-600', !isCurrent);
+          badge?.classList.toggle('bg-blue-600', isCurrent);
+          badge?.classList.toggle('bg-gray-700', !isCurrent);
+
+          if (isCurrent && !statusEl) {
+            const span = document.createElement('span');
+            span.className = 'version-status text-gray-400 text-sm';
+            span.textContent = 'Versão atual';
+            badge?.parentElement?.appendChild(span);
+          } else if (!isCurrent && statusEl) {
+            statusEl.remove();
+          }
+        });
+      })
+      .catch(() => {});
+  </script>
 </body>
 </html>

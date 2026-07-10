@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TTS_v1.0.0</title>
+  <title>TTS</title>
   <link rel="icon" type="image/x-icon" href="batima.ico">
   <script src="https://cdn.tailwindcss.com"></script>
   </head>
@@ -33,7 +33,7 @@
                 stroke-width="2"
                 d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
-            Download TTS_v1.0.2
+            Download <span id="download-version">TTS_v1.0.2</span>
           </a>
           <a
             href="versions.html"
@@ -126,5 +126,15 @@
         </a>
       </footer>
     </div>
+
+  <script>
+    fetch('version.json')
+      .then(r => r.json())
+      .then(d => {
+        document.title = 'TTS_v' + d.version;
+        document.getElementById('download-version').textContent = 'TTS_v' + d.version;
+      })
+      .catch(() => {});
+  </script>
   </body>
 </html>
