@@ -4,7 +4,7 @@ Sistema de Text-to-Speech para chat ao vivo do YouTube com suporte a ElevenLabs 
 
 ## Download
 
-Baixe a versão mais recente em [TTS_v1.0.4.zip](TTS_v1.0.4.zip).
+Baixe a versão mais recente em [TTS_v1.0.4.zip](https://viniciustixu.github.io/TTS_Muito_Foda/index.html).
 
 ## Funcionalidades
 
@@ -26,4 +26,4 @@ Baixe a versão mais recente em [TTS_v1.0.4.zip](TTS_v1.0.4.zip).
 
 ## Histórico de Versões
 
-Veja o [Histórico de Versões](versions.html) completo.
+Veja o [Histórico de Versões](https://viniciustixu.github.io/TTS_Muito_Foda/versions.html) completo.
