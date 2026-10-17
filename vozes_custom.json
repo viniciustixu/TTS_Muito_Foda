@@ -1,0 +1,382 @@
+[
+  {
+    "nome": "!anya",
+    "id": "ffe41701970d4b339ef7906300716f99"
+  },
+  {
+    "nome": "!chris",
+    "id": "4b215a58407c4def88e0892def6421b2"
+  },
+  {
+    "nome": "!chris_2",
+    "id": "d65c6d85022b46458b9d2347769c0766"
+  },
+  {
+    "nome": "!cartman",
+    "id": "41ee86659d5d4c50a54950ff66d13b36"
+  },
+  {
+    "nome": "!seu_madruga",
+    "id": "19df78d004434c8ba050561d5c5a86ec"
+  },
+  {
+    "nome": "!kiko",
+    "id": "82ac332bc1c141d08cc61fd0f0d6547a"
+  },
+  {
+    "nome": "!chaves",
+    "id": "1b33bafff1f148539bfb06344126b25a"
+  },
+  {
+    "nome": "!chaves_2",
+    "id": "8548d3e9d4e74482a648a7c276d89294"
+  },
+  {
+    "nome": "!goku",
+    "id": "dece2a4c7f8d476b8da3c3a6707298d4"
+  },
+  {
+    "nome": "!vegeta",
+    "id": "271b68dee5ec48038689e067f53df1a6"
+  },
+  {
+    "nome": "!bob_sponja",
+    "id": "01b057e7592b4b97a6963423f91f5e22"
+  },
+  {
+    "nome": "!bob_sponja_2",
+    "id": "8b9c7b29c75b4198aba8cc0457cd2030"
+  },
+  {
+    "nome": "!naruto",
+    "id": "bcb3ac264a124959a52c762a9ccb4ae2"
+  },
+  {
+    "nome": "!naruto_2",
+    "id": "d339e19362fc42dc8e3f4a6be653ff83"
+  },
+  {
+    "nome": "!naruto_3",
+    "id": "a77c3b29025d4166b487205b4eb7fa5b"
+  },
+  {
+    "nome": "!rick",
+    "id": "bdb4986093f8403d8dad0858c0628aa1"
+  },
+  {
+    "nome": "!rick_2",
+    "id": "9318b32b5477496a960e2958dd51c7ea"
+  },
+  {
+    "nome": "!gohan",
+    "id": "f8f4f6ebba814970998f60c7f78503f2"
+  },
+  {
+    "nome": "!peter_griffin",
+    "id": "6a88fe5df52d49d3a063241edc9f32b9"
+  },
+  {
+    "nome": "!salsicha",
+    "id": "ccfee7542e51426980391b9c6b40a220"
+  },
+  {
+    "nome": "!pernalonga",
+    "id": "56e5d3254c474a989317ebfdbd2d9fac"
+  },
+  {
+    "nome": "!pernalonga_2",
+    "id": "cdcd7feec6014725902e06f6335a548f"
+  },
+  {
+    "nome": "!pernalonga_3",
+    "id": "bc64f4ca7f864afb88453e2f038d6382"
+  },
+  {
+    "nome": "!scooby_doo",
+    "id": "dca65ae27aea4c0ebda502d71f90a43e"
+  },
+  {
+    "nome": "!scooby_doo_2",
+    "id": "433ef9237879464fb8a14635e5ccf905"
+  },
+  {
+    "nome": "!ash",
+    "id": "ef5844fb5fa84e07b9af0da3ae471374"
+  },
+  {
+    "nome": "!homer_simpson",
+    "id": "be1847570ec04056bbc618d66496fda4"
+  },
+  {
+    "nome": "!homer_simpson_2",
+    "id": "3064bbcd3fbe4f34afd4291d24f93235"
+  },
+  {
+    "nome": "!geralt",
+    "id": "d87fbdf889d14f9e94922945fb0a9a62"
+  },
+  {
+    "nome": "!michael_caio",
+    "id": "25e0e359fef14285bec5d780be39ac47"
+  },
+  {
+    "nome": "!picapau",
+    "id": "5160b0e8ca854d7e94403b2500ee582b"
+  },
+  {
+    "nome": "!kaiba",
+    "id": "7065be6d3c1e477e994b0bd06c46c424"
+  },
+  {
+    "nome": "!madagascar",
+    "id": "cfd8b26a1be648b89c65fe060d85fda7"
+  },
+  {
+    "nome": "!michael_jackson",
+    "id": "af1d2052ea8d441a972ca51a5bf547e4"
+  },
+  {
+    "nome": "!michael_jackson_2",
+    "id": "363fdb8fec3241dd9f8268f25f4f382d"
+  },
+  {
+    "nome": "!michael_jackson_3",
+    "id": "5c8f55c6d56f469f929d81b569eeb127"
+  },
+  {
+    "nome": "!lawliet",
+    "id": "13da3b0542614c5ab9d4a067f1e5434a"
+  },
+  {
+    "nome": "!lawliet_2",
+    "id": "4e8e6f7ce2b4444bacdc8b9f47922657"
+  },
+  {
+    "nome": "!sonic",
+    "id": "020ae7c097e644878745ae909ffaad15"
+  },
+  {
+    "nome": "!impacto",
+    "id": "f105557f5588463993a92c2dab364544"
+  },
+  {
+    "nome": "!miku",
+    "id": "a2e2bed323bd4a3a88e9b05117a4ba73"
+  },
+  {
+    "nome": "!miku_2",
+    "id": "befa4b55cf55459a89c56dab73bbe8b0"
+  },
+  {
+    "nome": "!miku_3",
+    "id": "f326449345af4b34a7e32621317c2553"
+  },
+  {
+    "nome": "!mcqueen",
+    "id": "0f8ff557a0f04d8b86fcb8a9212a86dc"
+  },
+  {
+    "nome": "!saocipriano",
+    "id": "0b12d715e4c741399594fccb12d4bbe2"
+  },
+  {
+    "nome": "!waldo",
+    "id": "04736e4d6a644abab81e601a7d2ae4b9"
+  },
+  {
+    "nome": "!waldo_2",
+    "id": "ea05dafdf78c4834a8b94a3dcb763843"
+  },
+  {
+    "nome": "!lula",
+    "id": "a4ac1426e4a749839c86853ad613eebe"
+  },
+  {
+    "nome": "!lula_2",
+    "id": "ed7de8309b7f4643932df8f4b56ac988"
+  },
+  {
+    "nome": "!brainrot",
+    "id": "1e17dc57eaba4f27ac3ee8d50cb8d040"
+  },
+  {
+    "nome": "!capitao",
+    "id": "102bccca7dc64b6b8f8494c199c5d153"
+  },
+  {
+    "nome": "!narrador_propagandas",
+    "id": "df1fa6d2ae194b3ebcbae60df48fde35"
+  },
+  {
+    "nome": "!sukuna",
+    "id": "3a164c7d00b2437682042ebd01755521"
+  },
+  {
+    "nome": "!sukuna_2",
+    "id": "24c2c79c666a4211baafc29de0cea1c6"
+  },
+  {
+    "nome": "!sukuna_3",
+    "id": "51f868b27c454c5fb03db8b4165ced82"
+  },
+  {
+    "nome": "!gojo",
+    "id": "2d7d220a6f44440da76a8b969318c19c"
+  },
+  {
+    "nome": "!gojo_2",
+    "id": "23582b7e1db44054bb522f19c9def4c8"
+  },
+  {
+    "nome": "!gojo_3",
+    "id": "713f7cec1ced4ecfb6daa6ef31ab81f0"
+  },
+  {
+    "nome": "!fluttershy",
+    "id": "3351971c57f64d14ada2628fdc770112"
+  },
+  {
+    "nome": "!fluttershy_2",
+    "id": "df0b34b3773b4d0ca02c3583074e3807"
+  },
+  {
+    "nome": "!isabela",
+    "id": "5661bf8cb97740fcb10d2f756abf7779"
+  },
+  {
+    "nome": "!mita",
+    "id": "ea3bf7f7c7af4b59be4715013e1c4428"
+  },
+  {
+    "nome": "!jarvis",
+    "id": "a5b93aeddcc948c19ea04f0afe9d178c"
+  },
+  {
+    "nome": "!adam",
+    "id": "1a61293f8fa8441f804deb10d0b2bc95"
+  },
+  {
+    "nome": "!cid_moreira",
+    "id": "85ecdf7683d64d0884d818971dbfddb4"
+  },
+  {
+    "nome": "!tiktok",
+    "id": "7344de0f70a84483975a5163f2a21837"
+  },
+  {
+    "nome": "!neymar",
+    "id": "2bd0cd1a49474aeab129894f4512e8a6"
+  },
+  {
+    "nome": "!alberto",
+    "id": "95e01d953caa4e6498d51635808c0da9"
+  },
+  {
+    "nome": "!contos_terror",
+    "id": "4d72497e3ceb4c75a7c5563900975afd"
+  },
+  {
+    "nome": "!aranha",
+    "id": "7c29d3e923b44be1b3de8f40581819ef"
+  },
+  {
+    "nome": "!aranha_2",
+    "id": "e8f56d284e334c11a1eb442b7ee0cc8b"
+  },
+  {
+    "nome": "!voz_grossa",
+    "id": "b59c8403f2354d46ba0003589b947316"
+  },
+  {
+    "nome": "!galvao_bueno",
+    "id": "7fe10a00249247aabb495bae57ac80e1"
+  },
+  {
+    "nome": "!ibere",
+    "id": "0889ee96fd82421b8ad9e126c4d73312"
+  },
+  {
+    "nome": "!satoru_gojo",
+    "id": "96a2c896ed7846848cdd83e484b23eb3"
+  },
+  {
+    "nome": "!shinobu",
+    "id": "ecb37eaae11944719577bf7d3877eebd"
+  },
+  {
+    "nome": "!loli",
+    "id": "97630cc4349d4a169bf242b8c819081c"
+  },
+  {
+    "nome": "!bolsonaro",
+    "id": "ba23a5c7ba41404188f937d78a4b159a"
+  },
+  {
+    "nome": "!bolsonaro_2",
+    "id": "ed827b0532324b12803bb9344a3a607f"
+  },
+  {
+    "nome": "!bolsonaro_3",
+    "id": "4744963f03b24efeb8e29b86aca419a0"
+  },
+  {
+    "nome": "!narrador_historias",
+    "id": "0ba1afd27db44eb2b4cb27fd331b93aa"
+  },
+  {
+    "nome": "!bibo",
+    "id": "e8d514263b0e46bcba8efeec1b0b25fc"
+  },
+  {
+    "nome": "!coringa",
+    "id": "fade11b01b5a4e43bb70e618c3e28662"
+  },
+  {
+    "nome": "!itoshi_sae",
+    "id": "2bb270d0dc344007b53ae25cd00a4e85"
+  },
+  {
+    "nome": "!teto",
+    "id": "65ce08eac21b46bd8c9c29ab96b6f55a"
+  },
+  {
+    "nome": "!sunny",
+    "id": "b7105f831b9644f28b0a92e004d9fd94"
+  },
+  {
+    "nome": "!globinho",
+    "id": "7f17748d77314050a6751a033d859b81"
+  },
+  {
+    "nome": "!mitsuri",
+    "id": "1c2f5d6f9c7f492f86853ba178ed11a3"
+  },
+  {
+    "nome": "!sbt",
+    "id": "01e164e5bebc4adbbd5ea6168ea188fb"
+  },
+  {
+    "nome": "!twilight",
+    "id": "1f7c937ef3534107aea722e20934ca47"
+  },
+  {
+    "nome": "!deadpool",
+    "id": "37b9fb2bdfc64bd5890a276df53305cc"
+  },
+  {
+    "nome": "!rarity",
+    "id": "16b5627505324cae82edc5d02311564a"
+  },
+  {
+    "nome": "!megumi",
+    "id": "59f817d7b8b64ed19b326cecbfe7e023"
+  },
+  {
+    "nome": "!bachira",
+    "id": "b1909f6b79e74e1eb54a77023634a6d8"
+  },
+  {
+    "nome": "!patolino",
+    "id": "359bd63839734c4e97d41f4b91e520ea"
+  }
+]
