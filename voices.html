@@ -67,6 +67,27 @@
     <script>
       const COVER_CDN = 'https://public-platform.r2.fish.audio/cdn-cgi/image/width=160,format=webp/coverimage/';
       const COVER_RAW = 'https://public-platform.r2.fish.audio/coverimage/';
+      // capas próprias: nome da voz (sem o !) -> arquivo em covers/
+      // se a imagem local falhar, coverFallback cai pra FishAudio e depois pra letra
+      const LOCAL_COVERS = {
+        bob_sponja_2: 'covers/bob_sponja2.png',
+        brainrot: 'covers/brainrot.png',
+        coringa: 'covers/joker.png',
+        gojo_2: 'covers/gojo_2.jfif',
+        kaiba: 'covers/kaiba.png',
+        megumi: 'covers/megumi.png',
+        michael_jackson_2: 'covers/michael_jackson_2.png',
+        michael_jackson_3: 'covers/michael_jackson_3.png',
+        miku: 'covers/miku.png',
+        patolino: 'covers/patolino.png',
+        pernalonga: 'covers/pernalonga.png',
+        pernalonga_2: 'covers/pernalonga_2.png',
+        pernalonga_3: 'covers/pernalonga_3.png',
+        scooby_doo: 'covers/scooby_doo.png',
+        sukuna: 'covers/sukuna.png',
+        twilight: 'covers/twilight.png',
+        waldo_2: 'covers/waldo_2.jfif',
+      };
       const TASK_AUDIO = 'https://platform.r2.fish.audio/task/';
       const CACHE_KEY = 'vozes_meta_v1';
       const CACHE_TTL = 24 * 60 * 60 * 1000;
@@ -164,17 +185,25 @@
       function cardHTML(v, index) {
         const name = cleanName(v.nome);
         const initial = esc(name.charAt(0).toUpperCase() || '?');
+        const localCover = LOCAL_COVERS[name] || null;
         return (
           '<div class="bg-gray-800 rounded-xl p-3 flex items-center gap-3 border border-transparent transition-colors" data-card="' +
           index +
           '">' +
           '<div class="relative shrink-0">' +
           '<img src="' +
-          COVER_CDN +
-          v.id +
+          (localCover || COVER_CDN + v.id) +
           '" alt="" data-cover="' +
           index +
-          '" data-step="0" loading="lazy" ' +
+          '" data-fish="' +
+          COVER_CDN +
+          v.id +
+          '" data-raw="' +
+          COVER_RAW +
+          v.id +
+          '" data-step="' +
+          (localCover ? '0' : '1') +
+          '" loading="lazy" ' +
           'class="w-14 h-14 rounded-xl object-cover bg-gray-700" ' +
           'onerror="coverFallback(this)" />' +
           '<div class="hidden w-14 h-14 rounded-xl bg-blue-600/80 items-center justify-center text-xl font-bold text-white absolute inset-0" data-letter="' +
@@ -223,11 +252,15 @@
       }
 
       function coverFallback(img) {
-        const step = parseInt(img.dataset.step || '0', 10);
-        if (step === 0) {
-          // tenta a versão sem resize
+        const step = parseInt(img.dataset.step || '1', 10);
+        if (step === 0 && img.dataset.fish) {
+          // capa local falhou -> tenta a da FishAudio (com resize)
           img.dataset.step = '1';
-          img.src = COVER_RAW + img.src.split('/coverimage/')[1];
+          img.src = img.dataset.fish;
+        } else if (step <= 1 && img.dataset.raw) {
+          // tenta a versão sem resize
+          img.dataset.step = '2';
+          img.src = img.dataset.raw;
         } else {
           // sem capa: letra no lugar
           img.style.display = 'none';
