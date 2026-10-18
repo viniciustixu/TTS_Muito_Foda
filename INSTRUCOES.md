@@ -66,7 +66,11 @@ curl.exe -s -X POST "https://api.fish.audio/v1/tts" `
 - **Ícone/capa**: `https://public-platform.r2.fish.audio/cdn-cgi/image/width=160,format=webp/coverimage/{id}`
   (se falhar, tenta sem resize e por último mostra a inicial do nome).
 - **Áudio**: `https://platform.r2.fish.audio/task/{task_id}.mp3` — URL pública e **sem expiração**
-  (a `samples[].audio` que a API devolve é assinada e expira em 1h; a página só usa ela como reserva).
+  na maioria das vezes (a `samples[].audio` que a API devolve é assinada e expira em 1h; a página só usa
+  ela como reserva). **Exceção conhecida**: alguns `task_id` dão **404** nessa URL pública porque a Fish
+  guardou o arquivo num caminho com data (`tasks/2026-08-16/...`) — caso do `!scooby_doo_2`
+  (`433ef9237879464fb8a14635e5ccf905`). O `voices.html` trata isso: se o `<audio>` der erro, refaz o
+  fetch dos metadados e toca a URL assinada fresca.
 - **Voz sem amostra na Fish** (`samples: 0`) → a página usa `amostras/<id>.mp3`.
 - **Gerar TTS direto do navegador não funciona**: o preflight CORS de `/v1/tts` responde 404.
   Por isso amostras faltantes são geradas aqui na máquina e salvas em `amostras/`.
@@ -102,8 +106,13 @@ de `amostras/`. `/voices` sem `.html` só funciona no GitHub Pages, não no serv
 - Não commitar o `.env` nem `amostras/` com lixo de teste.
 - Não trocar as URLs dos CDNs sem testar (são os hosts públicos da FishAudio).
 
-## Estado conhecido (atualizado em 16/10/2026)
+## Estado conhecido (atualizado em 18/10/2026)
 
-- 90 vozes no JSON; 88 com amostra pronta na FishAudio.
-- Amostras locais em `amostras/`: `94e794d95de94a38864d1d8930d903a5.mp3` (`!skeeper`) e
-  `af1d2052ea8d441a972ca51a5bf547e4.mp3` (`!michael_jackson`).
+- 95 vozes no JSON; 94 com amostra pronta na FishAudio (`samples > 0`) e 1 sem:
+  `!michael_jackson`.
+- Amostras locais em `amostras/`: só `af1d2052ea8d441a972ca51a5bf547e4.mp3` (`!michael_jackson`).
+  O arquivo de `!skeeper` foi apagado porque a voz saiu do JSON.
+- Todas as vozes com amostra na Fish foram testadas (18/10): só `!scooby_doo_2` tem a URL pública do
+  áudio com 404 — resolvido pelo fallback pra URL assinada no `voices.html`.
+- Pedido repetido: **não fazer varredura em massa na API da FishAudio sem avisar antes** (os
+  metadados são gratuitos e sem chave, mas o volume de request chama atenção).

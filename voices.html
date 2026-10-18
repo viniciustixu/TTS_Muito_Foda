@@ -464,8 +464,12 @@
             retried = true;
             try {
               const fresh = await resolveUrl(v, true);
-              if (fresh.url && fresh.url !== src) {
-                a.src = fresh.url;
+              // se o retry devolver a mesma URL (task público com 404, ex.: scooby_doo_2),
+              // usa a URL assinada que fetchMeta acabou de guardar em v.audio
+              const retryUrl =
+                fresh.url && fresh.url !== src ? fresh.url : v.audio && v.audio !== src ? v.audio : null;
+              if (retryUrl) {
+                a.src = retryUrl;
                 a.load();
                 a.play().catch(() => {});
                 return;
