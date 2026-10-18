@@ -1,6 +1,6 @@
-# Instruções — página de Vozes (`/vozes`)
+# Instruções — página de Vozes (`/voices`)
 
-> Documento para agentes de IA. **Leia antes de alterar** `vozes.html` ou `vozes_custom.json`.
+> Documento para agentes de IA. **Leia antes de alterar** `voices.html` ou `vozes_custom.json`.
 > A chave da API fica em `.env` (`FISH_API_KEY=...`), que está no `.gitignore` e **nunca** vai pro GitHub.
 
 ## O que existe
@@ -8,12 +8,14 @@
 | Arquivo | Papel |
 | --- | --- |
 | `vozes_custom.json` | Lista oficial das vozes do software: `[{ "nome": "!gojo", "id": "<id FishAudio>" }, ...]` |
-| `vozes.html` | A página `/vozes`. Lê o JSON e mostra nome, ícone e amostra de som |
+| `voices.html` | A página `/voices`. Lê o JSON e mostra nome, ícone e amostra de som |
 | `amostras/<id>.mp3` | Amostras geradas localmente **apenas** para vozes que a FishAudio não tem amostra pronta |
 | `.env` | Chave da API (local, gitignored) |
 
 No GitHub Pages a página responde em
-`https://viniciustixu.github.io/TTS_Muito_Foda/vozes` (o `vozes.html` também funciona).
+`https://viniciustixu.github.io/TTS_Muito_Foda/voices` (o `voices.html` também funciona).
+A URL antiga `/vozes` continua funcionando: `vozes.html` agora é só um redirect pra `voices`.
+A home virou `home.html` (`/home`); a raiz do site é um `index.html` que redireciona pra `home`.
 
 ## Pedido típico do usuário
 
@@ -70,7 +72,7 @@ curl.exe -s -X POST "https://api.fish.audio/v1/tts" `
   Por isso amostras faltantes são geradas aqui na máquina e salvas em `amostras/`.
 - **Cache**: metadados ficam 24h em `localStorage` na chave `vozes_meta_v1`. Vozes novas são buscadas
   na hora; títulos alterados só aparecem depois de 24h. Para forçar atualização geral, basta subir a
-  versão da chave no `vozes.html` (`vozes_meta_v1` → `vozes_meta_v2`).
+  versão da chave no `voices.html` (`vozes_meta_v1` → `vozes_meta_v2`).
 - **Nome exibido**: o `nome` do JSON sem o `!` (ex.: `gojo`) com o título oficial da FishAudio como
   subtítulo. A busca filtra pelos dois.
 - **Seção "Como usar"** (topo da página, card full width): instrução de usar `!nomedavoz + mensagem` e
@@ -80,23 +82,23 @@ curl.exe -s -X POST "https://api.fish.audio/v1/tts" `
   azul, o painel nunca some. Clicar numa tag copia ela. O texto acima dos botões é "Experimente algumas
   Tags:". Os campos acima da lista: depois do card vem a **busca**, menor e alinhada à direita
   (`sm:w-56`, com bastante espaço em relação ao card) — no mobile ela ocupa a largura toda. As tags
-  estão no array `EMO_GROUPS` dentro do `vozes.html` e seguem a lista oficial da FishAudio:
+  estão no array `EMO_GROUPS` dentro do `voices.html` e seguem a lista oficial da FishAudio:
   <https://docs.fish.audio/developer-guide/core-features/emotions> — é essa a fonte se a lista mudar.
 
 ## Testar antes de publicar
 
 ```powershell
 python -m http.server 8734   # na raiz do repositório
-# abrir http://localhost:8734/vozes.html
+# abrir http://localhost:8734/voices.html
 ```
 
 Checklist do teste: a lista abre com todos os itens do JSON, os ícones carregam, o play toca a amostra
 (e pausa no segundo clique), trocar de voz para a anterior, e as vozes sem amostra da Fish tocam o mp3
-de `amostras/`. `/vozes` sem `.html` só funciona no GitHub Pages, não no servidor local.
+de `amostras/`. `/voices` sem `.html` só funciona no GitHub Pages, não no servidor local.
 
 ## Não fazer
 
-- **Nunca** colar a chave da API em `vozes.html`, em outro HTML/JS ou em arquivo versionado.
+- **Nunca** colar a chave da API em `voices.html`, em outro HTML/JS ou em arquivo versionado.
 - Não commitar o `.env` nem `amostras/` com lixo de teste.
 - Não trocar as URLs dos CDNs sem testar (são os hosts públicos da FishAudio).
 

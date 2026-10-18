@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z94Y1G6GK7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-Z94Y1G6GK7');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vozes | TTS</title>
+    <link rel="icon" type="image/x-icon" href="batima.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-gray-900">
+    <div class="container mx-auto px-4 py-10 max-w-5xl">
+      <a
+        href="versions"
+        class="inline-flex items-center gap-1 text-gray-500 hover:text-gray-300 text-sm transition-colors mb-3">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Voltar
+      </a>
+
+      <div class="border border-amber-500/40 bg-amber-500/10 text-amber-100 rounded-xl px-4 py-3 mb-6">
+        Essas vozes estão disponíveis gratuitamente até o dia 30 de novembro, podendo ter o prazo estendido novamente, como já aconteceu antes.
+      </div>
+
+      <!-- ---------- como usar ---------- -->
+      <div class="bg-gray-800 rounded-xl p-5 sm:p-7 mb-10">
+        <h1 class="text-2xl font-bold text-white mb-2">Como usar</h1>
+        <p class="text-gray-300 text-base">
+          Use
+          <code class="bg-gray-700 text-blue-300 px-2 py-0.5 rounded font-mono">!nomedavoz</code>
+          + mensagem para que o bot leia sua mensagem.
+        </p>
+        <p class="text-gray-400 text-base mt-2">
+          Ex.:
+          <code class="bg-gray-900 px-2 py-0.5 rounded font-mono">!goku [happy]Oi, eu sou o Goku!</code>
+        </p>
+        <p class="text-gray-500 text-sm mt-5 mb-2.5">
+          Experimente algumas Tags:
+        </p>
+        <div id="emo-groups"></div>
+      </div>
+
+      <div class="flex justify-end mb-6">
+        <input
+          id="search"
+          type="text"
+          placeholder="Buscar voz..."
+          autocomplete="off"
+          class="w-full sm:w-56 bg-gray-800 border border-gray-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-white placeholder-gray-500 rounded-lg px-4 py-2 text-sm outline-none transition-colors" />
+      </div>
+
+      <div id="grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+
+      <div id="empty" class="hidden text-center text-gray-500 py-12">Nenhuma voz encontrada.</div>
+    </div>
+
+    <script>
+      const COVER_CDN = 'https://public-platform.r2.fish.audio/cdn-cgi/image/width=160,format=webp/coverimage/';
+      const COVER_RAW = 'https://public-platform.r2.fish.audio/coverimage/';
+      const TASK_AUDIO = 'https://platform.r2.fish.audio/task/';
+      const CACHE_KEY = 'vozes_meta_v1';
+      const CACHE_TTL = 24 * 60 * 60 * 1000;
+
+      let voices = []; // {nome, id, title?, task?, samples?}
+      let meta = {}; // id -> {title, task, samples}
+      let metaFailed = new Set();
+
+      let audio = null;
+      let playingId = null;
+      let loadingId = null;
+
+      const grid = document.getElementById('grid');
+      const emptyEl = document.getElementById('empty');
+      const searchEl = document.getElementById('search');
+
+      function cleanName(nome) {
+        return nome.replace(/^!/, '');
+      }
+
+      function esc(s) {
+        const d = document.createElement('div');
+        d.textContent = s == null ? '' : String(s);
+        return d.innerHTML;
+      }
+
+      /* ---------- cache ---------- */
+      function readCache() {
+        try {
+          const raw = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+          if (raw && raw.ts && Date.now() - raw.ts < CACHE_TTL && raw.map) return raw.map;
+        } catch (e) {}
+        return null;
+      }
+      function writeCache(map) {
+        try {
+          localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), map: map }));
+        } catch (e) {}
+      }
+
+      /* ---------- metadata ---------- */
+      async function fetchMeta(id) {
+        const res = await fetch('https://api.fish.audio/model/' + id, { cache: 'no-store' });
+        if (!res.ok) throw new Error(res.status);
+        const d = await res.json();
+        const sample = d.samples && d.samples.length ? d.samples[0] : null;
+        return {
+          title: d.title || '',
+          task: sample ? sample.task_id : null,
+          audio: sample ? sample.audio : null,
+          samples: d.samples ? d.samples.length : 0,
+        };
+      }
+
+      async function loadAllMeta() {
+        const cached = readCache();
+        const pending = [];
+        voices.forEach((v) => {
+          if (cached && cached[v.id]) {
+            Object.assign(v, cached[v.id]);
+          } else {
+            pending.push(v);
+          }
+        });
+        updateSubtitles();
+        if (!pending.length) return;
+
+        const queue = pending.slice();
+        const workers = Array.from({ length: 8 }, async () => {
+          while (queue.length) {
+            const v = queue.shift();
+            try {
+              const m = await fetchMeta(v.id);
+              Object.assign(v, m);
+              meta[v.id] = m;
+            } catch (e) {
+              metaFailed.add(v.id);
+            }
+            updateSubtitle(v);
+          }
+        });
+        await Promise.all(workers);
+
+        const map = {};
+        voices.forEach((v) => {
+          if (v.title !== undefined) {
+            map[v.id] = { title: v.title, task: v.task, samples: v.samples, audio: v.audio };
+          }
+        });
+        writeCache(map);
+        updateSubtitles();
+      }
+
+      /* ---------- render ---------- */
+      function cardHTML(v, index) {
+        const name = cleanName(v.nome);
+        const initial = esc(name.charAt(0).toUpperCase() || '?');
+        return (
+          '<div class="bg-gray-800 rounded-xl p-3 flex items-center gap-3 border border-transparent transition-colors" data-card="' +
+          index +
+          '">' +
+          '<div class="relative shrink-0">' +
+          '<img src="' +
+          COVER_CDN +
+          v.id +
+          '" alt="" data-cover="' +
+          index +
+          '" data-step="0" loading="lazy" ' +
+          'class="w-14 h-14 rounded-xl object-cover bg-gray-700" ' +
+          'onerror="coverFallback(this)" />' +
+          '<div class="hidden w-14 h-14 rounded-xl bg-blue-600/80 items-center justify-center text-xl font-bold text-white absolute inset-0" data-letter="' +
+          index +
+          '">' +
+          initial +
+          '</div>' +
+          '</div>' +
+          '<div class="min-w-0 flex-1">' +
+          '<p class="text-white font-semibold truncate" data-name="' +
+          index +
+          '">' +
+          esc(name) +
+          '</p>' +
+          '<p class="text-gray-400 text-xs truncate" data-title="' +
+          index +
+          '">&nbsp;</p>' +
+          '</div>' +
+          '<button data-play="' +
+          index +
+          '" aria-label="Tocar amostra" class="shrink-0 w-10 h-10 rounded-full bg-blue-600 hover:bg-blue-500 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center text-white transition-colors">' +
+          playIcon() +
+          '</button>' +
+          '</div>'
+        );
+      }
+
+      function playIcon() {
+        return (
+          '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-0.5" viewBox="0 0 24 24" fill="currentColor">' +
+          '<path d="M8 5v14l11-7z"/></svg>'
+        );
+      }
+      function pauseIcon() {
+        return (
+          '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">' +
+          '<path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>'
+        );
+      }
+      function spinIcon() {
+        return (
+          '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor">' +
+          '<circle cx="12" cy="12" r="9" stroke-opacity="0.3" stroke-width="3"/>' +
+          '<path stroke-width="3" stroke-linecap="round" d="M21 12a9 9 0 0 0-9-9"/></svg>'
+        );
+      }
+
+      function coverFallback(img) {
+        const step = parseInt(img.dataset.step || '0', 10);
+        if (step === 0) {
+          // tenta a versão sem resize
+          img.dataset.step = '1';
+          img.src = COVER_RAW + img.src.split('/coverimage/')[1];
+        } else {
+          // sem capa: letra no lugar
+          img.style.display = 'none';
+          const letter = document.querySelector('[data-letter="' + img.dataset.cover + '"]');
+          if (letter) {
+            letter.classList.remove('hidden');
+            letter.classList.add('flex');
+          }
+        }
+      }
+
+      function render() {
+        grid.innerHTML = voices.map(cardHTML).join('');
+        voices.forEach((v, i) => {
+          grid.querySelector('[data-play="' + i + '"]').addEventListener('click', () => togglePlay(i));
+        });
+        updateSubtitles();
+        applyFilter();
+      }
+
+      function updateSubtitle(v) {
+        const i = voices.indexOf(v);
+        if (i < 0) return;
+        const el = document.querySelector('[data-title="' + i + '"]');
+        if (!el) return;
+        el.textContent = v.title ? v.title : metaFailed.has(v.id) ? 'amostra indisponível' : '…';
+        el.classList.toggle('text-gray-500', metaFailed.has(v.id));
+      }
+
+      function updateSubtitles() {
+        voices.forEach(updateSubtitle);
+      }
+
+      /* ---------- busca ---------- */
+      function applyFilter() {
+        const q = searchEl.value.trim().toLowerCase();
+        let visible = 0;
+        voices.forEach((v, i) => {
+          const card = grid.querySelector('[data-card="' + i + '"]');
+          if (!card) return;
+          const hay = (cleanName(v.nome) + ' ' + (v.title || '')).toLowerCase();
+          const show = !q || hay.includes(q);
+          card.classList.toggle('hidden', !show);
+          if (show) visible++;
+        });
+        emptyEl.classList.toggle('hidden', visible > 0);
+      }
+      searchEl.addEventListener('input', applyFilter);
+
+      /* ---------- emoções (lista oficial FishAudio) ---------- */
+      const EMO_GROUPS = [
+        ['Emoções', ['happy','sad','angry','excited','calm','nervous','confident','surprised','satisfied','delighted','scared','worried','upset','frustrated','depressed','empathetic','embarrassed','disgusted','moved','proud','relaxed','grateful','curious','sarcastic']],
+        ['Emoções avançadas', ['disdainful','unhappy','anxious','hysterical','indifferent','uncertain','doubtful','confused','disappointed','regretful','guilty','ashamed','jealous','envious','hopeful','optimistic','pessimistic','nostalgic','lonely','bored','contemptuous','sympathetic','compassionate','determined','resigned']],
+        ['Tom', ['in a hurry tone','shouting','screaming','whispering','soft tone','emphasis']],
+        ['Efeitos sonoros', ['laughing','chuckling','sobbing','crying loudly','sighing','groaning','panting','gasping','yawning','snoring','clear throat']],
+        ['Efeitos especiais', ['audience laughing','background laughter','crowd laughing','break','long-break']],
+      ];
+
+      function bindEmoCopy(scope) {
+        scope.querySelectorAll('.emo').forEach((btn) => {
+          btn.addEventListener('click', async () => {
+            const tag = btn.dataset.tag;
+            try {
+              await navigator.clipboard.writeText(tag);
+            } catch (e) {
+              const t = document.createElement('textarea');
+              t.value = tag;
+              document.body.appendChild(t);
+              t.select();
+              try {
+                document.execCommand('copy');
+              } catch (e2) {}
+              t.remove();
+            }
+            btn.classList.add('bg-blue-600', 'text-white');
+            setTimeout(() => btn.classList.remove('bg-blue-600', 'text-white'), 900);
+          });
+        });
+      }
+
+      function renderEmotions() {
+        const wrap = document.getElementById('emo-groups');
+        const BTN =
+          'emo-btn px-3 py-1.5 rounded text-sm font-medium transition-colors ';
+        wrap.innerHTML =
+          '<div id="emo-btns" class="flex flex-wrap gap-1.5">' +
+          EMO_GROUPS.map(
+            ([label], i) =>
+              '<button type="button" data-group="' +
+              i +
+              '" aria-pressed="false" class="' +
+              BTN +
+              'bg-gray-700 text-gray-200 hover:bg-gray-600 hover:text-white">' +
+              label +
+              '</button>'
+          ).join('') +
+          '</div>' +
+          '<div id="emo-panel" class="flex flex-wrap gap-1.5 mt-3"></div>';
+
+        const panel = document.getElementById('emo-panel');
+        const btns = [...wrap.querySelectorAll('.emo-btn')];
+
+        function showGroup(i) {
+          btns.forEach((b, n) => {
+            const on = n === i;
+            b.classList.toggle('bg-blue-600', on);
+            b.classList.toggle('text-white', on);
+            b.classList.toggle('bg-gray-700', !on);
+            b.classList.toggle('text-gray-200', !on);
+            b.setAttribute('aria-pressed', on ? 'true' : 'false');
+          });
+          panel.innerHTML = EMO_GROUPS[i][1]
+            .map(
+              (t) =>
+                '<button type="button" data-tag="[' + t + ']" ' +
+                'class="emo bg-gray-900 hover:bg-gray-700 text-gray-200 px-2.5 py-1 rounded text-sm font-mono transition-colors">[' +
+                t +
+                ']</button>'
+            )
+            .join('');
+          bindEmoCopy(panel);
+        }
+
+        btns.forEach((btn) => {
+          const i = +btn.dataset.group;
+          btn.addEventListener('mouseenter', () => showGroup(i));
+          btn.addEventListener('focus', () => showGroup(i));
+          btn.addEventListener('click', () => showGroup(i));
+        });
+
+        showGroup(0);
+      }
+      renderEmotions();
+
+      /* ---------- player ---------- */
+      function setButton(i, html, disabled) {
+        const btn = document.querySelector('[data-play="' + i + '"]');
+        if (!btn) return;
+        btn.innerHTML = html;
+        btn.disabled = !!disabled;
+      }
+
+      function stopAudio() {
+        if (audio) {
+          audio.pause();
+          audio.src = '';
+          audio = null;
+        }
+        if (playingId !== null) setButton(playingId, playIcon(), false);
+        if (loadingId !== null && loadingId !== playingId) setButton(loadingId, playIcon(), false);
+        playingId = null;
+        loadingId = null;
+      }
+
+      async function resolveUrl(v, forceFresh) {
+        // amostra local (vozes que a FishAudio não tem pronta)
+        if (v.samples === 0) return { url: 'amostras/' + v.id + '.mp3', local: true };
+
+        if (!forceFresh) {
+          if (v.task) return { url: TASK_AUDIO + v.task + '.mp3' };
+          if (v.audio) return { url: v.audio, signed: true };
+        }
+
+        // busca metadados de novo (url assinada é válida por 1h)
+        try {
+          const m = await fetchMeta(v.id);
+          Object.assign(v, m);
+          meta[v.id] = m;
+          updateSubtitle(v);
+          if (m.samples === 0) return { url: 'amostras/' + v.id + '.mp3', local: true };
+          if (m.task) return { url: TASK_AUDIO + m.task + '.mp3' };
+          if (m.audio) return { url: m.audio, signed: true };
+        } catch (e) {}
+
+        // último recurso: arquivo local, se existir
+        return { url: 'amostras/' + v.id + '.mp3', local: true };
+      }
+
+      async function togglePlay(i) {
+        const v = voices[i];
+        if (!v) return;
+
+        if (playingId === i && audio && !audio.paused) {
+          audio.pause();
+          return;
+        }
+        if (playingId === i && audio && audio.paused) {
+          audio.play();
+          return;
+        }
+
+        stopAudio();
+        loadingId = i;
+        setButton(i, spinIcon(), true);
+
+        let src;
+        try {
+          const resolved = await resolveUrl(v, false);
+          src = resolved.url;
+        } catch (e) {
+          src = null;
+        }
+        if (!src) {
+          loadingId = null;
+          setButton(i, playIcon(), false);
+          return;
+        }
+
+        const a = new Audio();
+        a.preload = 'auto';
+        let retried = false;
+        let started = false;
+
+        a.addEventListener('playing', () => {
+          started = true;
+          if (loadingId === i) loadingId = null;
+          playingId = i;
+          setButton(i, pauseIcon(), false);
+        });
+        a.addEventListener('pause', () => {
+          if (playingId === i && a.ended) setButton(i, playIcon(), false);
+          else if (playingId === i) setButton(i, playIcon(), false);
+        });
+        a.addEventListener('ended', () => {
+          if (playingId === i) {
+            playingId = null;
+            setButton(i, playIcon(), false);
+          }
+        });
+        a.addEventListener('error', async () => {
+          if (audio !== a) return; // áudio antigo que foi substituído, ignora
+          // tenta uma vez com a URL assinada fresca
+          if (!retried) {
+            retried = true;
+            try {
+              const fresh = await resolveUrl(v, true);
+              if (fresh.url && fresh.url !== src) {
+                a.src = fresh.url;
+                a.load();
+                a.play().catch(() => {});
+                return;
+              }
+            } catch (e) {}
+          }
+          if (playingId === i) playingId = null;
+          if (loadingId === i) loadingId = null;
+          setButton(i, playIcon(), false);
+        });
+
+        audio = a;
+        a.src = src;
+        a.play().catch(() => {
+          if (loadingId === i) {
+            loadingId = null;
+            setButton(i, playIcon(), false);
+          }
+        });
+      }
+
+      /* ---------- init ---------- */
+      async function init() {
+        try {
+          const res = await fetch('vozes_custom.json?_=' + Date.now());
+          voices = await res.json();
+        } catch (e) {
+          emptyEl.textContent = 'Erro ao carregar a lista de vozes.';
+          emptyEl.classList.remove('hidden');
+          return;
+        }
+        render();
+        loadAllMeta().catch(() => {});
+      }
+
+      init();
+    </script>
+  </body>
+</html>
