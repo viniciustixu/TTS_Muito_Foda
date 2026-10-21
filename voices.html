@@ -224,7 +224,7 @@
           btn.addEventListener('click', async () => {
             const v = voices[+btn.dataset.copy];
             if (!v) return;
-            const text = '!' + cleanName(v.nome) + ' ';
+            const text = '!' + cleanName(v.nome) + '\u00A0';
             const ok = await copyText(text);
             if (!ok) {
               showToast('Não foi possível copiar');
