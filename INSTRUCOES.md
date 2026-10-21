@@ -83,6 +83,13 @@ curl.exe -s -X POST "https://api.fish.audio/v1/tts" `
   versão da chave no `voices.html` (`vozes_meta_v1` → `vozes_meta_v2`).
 - **Nome exibido**: o `nome` do JSON sem o `!` (ex.: `gojo`) com o título oficial da FishAudio como
   subtítulo. A busca filtra pelos dois.
+- **Nome da voz é clicável**: o título de cada card copia o comando completo (`!gojo`, com o `!` no
+  início) pra área de transferência. Passando o mouse no nome aparece o ícone
+  `<span class="material-symbols-outlined">content_copy</span>`; depois do clique o ícone vira `check`
+  (verde) por ~1,2s e um toast no rodapé confirma "Copiado !gojo". A página carrega a fonte
+  **Material Symbols Outlined** (Google Fonts) no `<head>` — sem isso o ícone não aparece. O helper
+  `copyText()` faz o fallback pra `document.execCommand('copy')` e é compartilhado com a cópia das
+  tags de emoção.
 - **Seção "Como usar"** (topo da página, card full width): instrução de usar `!nomedavoz + mensagem` e
   exemplo com tag de emoção (`!goku [happy]Oi, eu sou o Goku!`). Abaixo vem **5 botões de categoria**
   (Emoções, Emoções avançadas, Tom, Efeitos sonoros, Efeitos especiais) e **sempre fica um grupo aberto**:
