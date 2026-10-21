@@ -3,6 +3,26 @@
 > Documento para agentes de IA. **Leia antes de alterar** `voices.html` ou `vozes_custom.json`.
 > A chave da API fica em `.env` (`FISH_API_KEY=...`), que está no `.gitignore` e **nunca** vai pro GitHub.
 
+## ⛔ REGRA OBRIGATÓRIA — nunca commitar sem permissão
+
+> **NUNCA** rode `git commit`, `git push`, `git tag` ou qualquer operação que altere o histórico
+> do repositório **sem o usuário pedir explicitamente na conversa**.
+> O usuário **sempre** quer testar a mudança **localmente** antes de qualquer coisa subir.
+
+Como aplicar:
+
+1. **Altere só os arquivos.** Deixe a mudança no working tree.
+2. **Teste localmente** com `python -m http.server 8734` e abra `http://localhost:8734/voices.html`.
+3. **Reporte** o que foi feito e como verificar, e **pare**.
+4. Só faça `git add`/`commit`/`push` **depois** de o usuário pedir — e mesmo assim, confirme antes.
+
+Não há exceção: nem "a mudança é óbvia", nem "já está testado", nem "vou adiantar". Push não
+autorizado **apaga trabalho** do usuário (histórico reescrito, deploy do GitHub Pages disparado
+sem aviso). Na dúvida, **pergunte**.
+
+Se o usuário quiser o arquivo alterado **e** commitado, ele dirá isso — o commit é sempre um
+pedido explícito, nunca uma etapa "óbvia" do trabalho.
+
 ## O que existe
 
 | Arquivo | Papel |
@@ -83,8 +103,9 @@ curl.exe -s -X POST "https://api.fish.audio/v1/tts" `
   versão da chave no `voices.html` (`vozes_meta_v1` → `vozes_meta_v2`).
 - **Nome exibido**: o `nome` do JSON sem o `!` (ex.: `gojo`) com o título oficial da FishAudio como
   subtítulo. A busca filtra pelos dois.
-- **Nome da voz é clicável**: o título de cada card copia o comando completo (`!gojo`, com o `!` no
-  início) pra área de transferência. Passando o mouse no nome aparece o ícone
+- **Nome da voz é clicável**: o título de cada card copia o comando completo pra área de transferência:
+  **`!gojo `** — com o `!` no início **e um espaço no final** (pra usuário digitar a mensagem logo em
+  seguida sem precisar apertar espaço). Passando o mouse no nome aparece o ícone
   `<span class="material-symbols-outlined">content_copy</span>`; depois do clique o ícone vira `check`
   (verde) por ~1,2s e um toast no rodapé confirma "Copiado !gojo". A página carrega a fonte
   **Material Symbols Outlined** (Google Fonts) no `<head>` — sem isso o ícone não aparece. O helper
@@ -114,6 +135,8 @@ de `amostras/`. `/voices` sem `.html` só funciona no GitHub Pages, não no serv
 ## Não fazer
 
 - **Nunca** colar a chave da API em `voices.html`, em outro HTML/JS ou em arquivo versionado.
+- **Nunca** dar `git commit` / `git push` sem o usuário pedir explicitamente — testar **sempre** local
+  primeiro (ver a regra obrigatória no topo do arquivo).
 - Não commitar o `.env` nem `amostras/` com lixo de teste.
 - Não trocar as URLs dos CDNs sem testar (são os hosts públicos da FishAudio).
 
