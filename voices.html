@@ -357,7 +357,9 @@
           '</button>' +
           '<p class="text-gray-400 text-xs truncate" data-title="' +
           index +
-          '">&nbsp;</p>' +
+          '">' +
+          esc(v.descricao || v.title || '') +
+          '</p>' +
           '</div>' +
           '<button data-play="' +
           index +
@@ -424,7 +426,8 @@
         if (i < 0) return;
         const el = document.querySelector('[data-title="' + i + '"]');
         if (!el) return;
-        el.textContent = v.title ? v.title : metaFailed.has(v.id) ? 'amostra indisponível' : '…';
+        const text = v.descricao || v.title;
+        el.textContent = text ? text : metaFailed.has(v.id) ? 'amostra indisponível' : '…';
         el.classList.toggle('text-gray-500', metaFailed.has(v.id));
       }
 
@@ -439,7 +442,7 @@
         voices.forEach((v, i) => {
           const card = grid.querySelector('[data-card="' + i + '"]');
           if (!card) return;
-          const hay = (cleanName(v.nome) + ' ' + (v.title || '')).toLowerCase();
+          const hay = (cleanName(v.nome) + ' ' + (v.descricao || v.title || '')).toLowerCase();
           const show = !q || hay.includes(q);
           card.classList.toggle('hidden', !show);
           if (show) visible++;
