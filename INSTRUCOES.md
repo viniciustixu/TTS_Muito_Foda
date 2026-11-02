@@ -27,7 +27,7 @@ pedido explícito, nunca uma etapa "óbvia" do trabalho.
 
 | Arquivo | Papel |
 | --- | --- |
-| `vozes_custom.json` | Lista oficial das vozes do software: `[{ "nome": "!gojo", "id": "<id FishAudio>" }, ...]` |
+| `vozes_custom.json` | Lista oficial das vozes do software: `[{ "nome": "!gojo", "id": "<id FishAudio>", "descricao": "...", "volume": 0 }, ...]` |
 | `voices.html` | A página `/voices`. Lê o JSON e mostra nome, ícone e amostra de som |
 | `amostras/<id>.mp3` | Amostras geradas localmente **apenas** para vozes que a FishAudio não tem amostra pronta |
 | `covers/<nome_da_voz>.png` | Capa própria de algumas vozes; o mapa fica em `LOCAL_COVERS` no `voices.html` (chave = nome da voz sem o `!`) |
@@ -45,7 +45,9 @@ A home virou `home.html` (`/home`); a raiz do site é um `index.html` que redire
 Nesse caso **nada precisa ser reescrito na página**: ela lê o JSON em tempo de execução. O trabalho é
 **validar as vozes novas** e **gerar amostra local para as que não têm som**:
 
-1. Reconferir o JSON (formato `nome` começando com `!` e `id` de 32 caracteres hexadecimais).
+1. Reconferir o JSON (formato `nome` começando com `!`, `id` de 32 caracteres hexadecimais e `volume`
+   numérico — **pode ser `0`**, que é o valor padrão atual). O `volume` é consumido pelo software, não
+   pelo site; o `voices.html` ignora esse campo.
    Vozes removidas do JSON desaparecem do site automaticamente; vozes novas aparecem na hora.
 2. Para cada `id` **novo**, buscar os metadados na FishAudio (ver comando abaixo) e conferir:
    - o `id` existe? (se der 404, avisar o usuário — o id está errado ou a voz foi apagada)
@@ -153,3 +155,5 @@ de `amostras/`. `/voices` sem `.html` só funciona no GitHub Pages, não no serv
   as outras 78 vozes continuam com a capa da FishAudio.
 - Pedido repetido: **não fazer varredura em massa na API da FishAudio sem avisar antes** (os
   metadados são gratuitos e sem chave, mas o volume de request chama atenção).
+- Campo `volume` adicionado em 02/11/2026: as 133 vozes começaram com `volume: 0`; os valores são
+  ajustados manualmente pelo usuário no JSON.
