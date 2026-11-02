@@ -3,13 +3,13 @@
     "nome": "!anya",
     "id": "ffe41701970d4b339ef7906300716f99",
     "descricao": "De Spy x Family",
-    "volume": -80
+    "volume": 10
   },
   {
     "nome": "!chaves",
     "id": "1b33bafff1f148539bfb06344126b25a",
     "descricao": "De Chaves",
-    "volume": 0
+    "volume": 10
   },
   {
     "nome": "!chaves_2",
@@ -81,7 +81,7 @@
     "nome": "!srsirigueijo",
     "id": "feb8db8e9f364804a7759663359a483e",
     "descricao": "De Bob Esponja",
-    "volume": 0
+    "volume": 15
   },
   {
     "nome": "!plankton",
@@ -141,13 +141,13 @@
     "nome": "!sasuke",
     "id": "ba8d2df5c9744ec89cd80399fd41e2f2",
     "descricao": "De Naruto",
-    "volume": 0
+    "volume": 20
   },
   {
     "nome": "!hinata",
     "id": "9bf82ae115c049e0ba853a2813cb6ead",
     "descricao": "De Naruto",
-    "volume": 0
+    "volume": 25
   },
   {
     "nome": "!tsunade",
@@ -159,7 +159,7 @@
     "nome": "!rock_lee",
     "id": "34a7006fe942447790d5e12a0f2cc13c",
     "descricao": "De Naruto",
-    "volume": 0
+    "volume": 15
   },
   {
     "nome": "!maito_gai",
@@ -171,7 +171,7 @@
     "nome": "!maito_gai_triste",
     "id": "3b685c3bf6e748f29f7de2031b92c3ab",
     "descricao": "De Naruto",
-    "volume": 0
+    "volume": 5
   },
   {
     "nome": "!gojo",
@@ -243,7 +243,7 @@
     "nome": "!lawliet_2",
     "id": "4e8e6f7ce2b4444bacdc8b9f47922657",
     "descricao": "De Death Note",
-    "volume": 0
+    "volume": 15
   },
   {
     "nome": "!misa_amane",
@@ -255,7 +255,7 @@
     "nome": "!itoshi_sae",
     "id": "2bb270d0dc344007b53ae25cd00a4e85",
     "descricao": "De Blue Lock",
-    "volume": 0
+    "volume": 5
   },
   {
     "nome": "!bachira",
@@ -273,7 +273,7 @@
     "nome": "!kaiba",
     "id": "7065be6d3c1e477e994b0bd06c46c424",
     "descricao": "De Yu-Gi-Oh!",
-    "volume": 0
+    "volume": 10
   },
   {
     "nome": "!hika_inoue",
@@ -303,7 +303,7 @@
     "nome": "!teto",
     "id": "65ce08eac21b46bd8c9c29ab96b6f55a",
     "descricao": "UTAU / Vocaloid",
-    "volume": 0
+    "volume": -5
   },
   {
     "nome": "!rick",
@@ -315,7 +315,7 @@
     "nome": "!rick_2",
     "id": "9318b32b5477496a960e2958dd51c7ea",
     "descricao": "De Rick and Morty",
-    "volume": 0
+    "volume": 5
   },
   {
     "nome": "!evil_morty",
@@ -327,19 +327,19 @@
     "nome": "!scooby_doo",
     "id": "dca65ae27aea4c0ebda502d71f90a43e",
     "descricao": "De Scooby-Doo",
-    "volume": 0
+    "volume": 15
   },
   {
     "nome": "!scooby_doo_2",
     "id": "433ef9237879464fb8a14635e5ccf905",
     "descricao": "De Scooby-Doo",
-    "volume": 0
+    "volume": 25
   },
   {
     "nome": "!salsicha",
     "id": "ccfee7542e51426980391b9c6b40a220",
     "descricao": "De Scooby-Doo",
-    "volume": 0
+    "volume": 15
   },
   {
     "nome": "!pernalonga",
@@ -369,25 +369,25 @@
     "nome": "!homer_simpson",
     "id": "be1847570ec04056bbc618d66496fda4",
     "descricao": "De Os Simpsons",
-    "volume": 0
+    "volume": 15
   },
   {
     "nome": "!homer_simpson_2",
     "id": "3064bbcd3fbe4f34afd4291d24f93235",
     "descricao": "De Os Simpsons",
-    "volume": 0
+    "volume": 20
   },
   {
     "nome": "!peter_griffin",
     "id": "6a88fe5df52d49d3a063241edc9f32b9",
     "descricao": "De Family Guy",
-    "volume": 0
+    "volume": 20
   },
   {
     "nome": "!cartman",
     "id": "41ee86659d5d4c50a54950ff66d13b36",
     "descricao": "De South Park",
-    "volume": 0
+    "volume": 35
   },
   {
     "nome": "!fluttershy",
@@ -423,13 +423,13 @@
     "nome": "!pato_donald",
     "id": "113e63bd38eb43d2a6ea06af048fb2ab",
     "descricao": "Da Disney",
-    "volume": 0
+    "volume": 35
   },
   {
     "nome": "!coragem",
     "id": "214ce39f5b6b4cd08dc134b2fa359ebb",
     "descricao": "De Coragem, o Cão Covarde",
-    "volume": 0
+    "volume": 25
   },
   {
     "nome": "!gumball",
@@ -441,7 +441,7 @@
     "nome": "!mcqueen",
     "id": "0f8ff557a0f04d8b86fcb8a9212a86dc",
     "descricao": "De Carros",
-    "volume": 0
+    "volume": 20
   },
   {
     "nome": "!madagascar",
@@ -459,13 +459,13 @@
     "nome": "!luigi",
     "id": "e3d16e778fe3432a8f16299ef7f3b298",
     "descricao": "De Super Mario",
-    "volume": 0
+    "volume": -20
   },
   {
     "nome": "!leon",
     "id": "28c9b4bd70ee4456977c6c73d1f4be5b",
     "descricao": "De Resident Evil",
-    "volume": 0
+    "volume": 10
   },
   {
     "nome": "!ashley",
@@ -489,7 +489,7 @@
     "nome": "!big_smoke",
     "id": "67e2bd8effb54ab181debf02cd09aaee",
     "descricao": "Melhor em inglês",
-    "volume": 0
+    "volume": 10
   },
   {
     "nome": "!kratos",
@@ -519,37 +519,37 @@
     "nome": "!sonic",
     "id": "020ae7c097e644878745ae909ffaad15",
     "descricao": "De Sonic",
-    "volume": 0
+    "volume": 20
   },
   {
     "nome": "!geralt",
     "id": "d87fbdf889d14f9e94922945fb0a9a62",
     "descricao": "De The Witcher",
-    "volume": 0
+    "volume": 25
   },
   {
     "nome": "!mortal_kombat",
     "id": "d13f84b987ad4f22b56d2b47f4eb838e",
     "descricao": "Melhor com palavras únicas",
-    "volume": 0
+    "volume": -5
   },
   {
     "nome": "!mita",
     "id": "ea3bf7f7c7af4b59be4715013e1c4428",
     "descricao": "De MiSide",
-    "volume": 0
+    "volume": 10
   },
   {
     "nome": "!aranha",
     "id": "7c29d3e923b44be1b3de8f40581819ef",
     "descricao": "De Homem-Aranha",
-    "volume": 0
+    "volume": 40
   },
   {
     "nome": "!aranha_2",
     "id": "e8f56d284e334c11a1eb442b7ee0cc8b",
     "descricao": "De Homem-Aranha",
-    "volume": 0
+    "volume": 10
   },
   {
     "nome": "!deadpool",
@@ -561,7 +561,7 @@
     "nome": "!coringa",
     "id": "fade11b01b5a4e43bb70e618c3e28662",
     "descricao": "Da DC Comics",
-    "volume": 0
+    "volume": 15
   },
   {
     "nome": "!jarvis",
@@ -573,13 +573,13 @@
     "nome": "!capitao",
     "id": "102bccca7dc64b6b8f8494c199c5d153",
     "descricao": "De Tropa de Elite",
-    "volume": 0
+    "volume": 10
   },
   {
     "nome": "!bibo",
     "id": "e8d514263b0e46bcba8efeec1b0b25fc",
     "descricao": "De O Senhor dos Anéis",
-    "volume": 0
+    "volume": 15
   },
   {
     "nome": "!saocipriano",
@@ -627,7 +627,7 @@
     "nome": "!lula",
     "id": "a4ac1426e4a749839c86853ad613eebe",
     "descricao": "Político",
-    "volume": 0
+    "volume": 10
   },
   {
     "nome": "!lula_2",
@@ -645,7 +645,7 @@
     "nome": "!eneas",
     "id": "3ac673c5ea474038bed1b11f6dc95974",
     "descricao": "Político",
-    "volume": 0
+    "volume": -5
   },
   {
     "nome": "!cid_moreira",
@@ -657,25 +657,25 @@
     "nome": "!narrador_historias",
     "id": "0ba1afd27db44eb2b4cb27fd331b93aa",
     "descricao": "Narrador",
-    "volume": 0
+    "volume": 10
   },
   {
     "nome": "!contos_terror",
     "id": "4d72497e3ceb4c75a7c5563900975afd",
     "descricao": "Narrador",
-    "volume": 0
+    "volume": 5
   },
   {
     "nome": "!impacto",
     "id": "f105557f5588463993a92c2dab364544",
     "descricao": "Narrador",
-    "volume": 0
+    "volume": -5
   },
   {
     "nome": "!alberto",
     "id": "95e01d953caa4e6498d51635808c0da9",
     "descricao": "Narrador",
-    "volume": 0
+    "volume": -5
   },
   {
     "nome": "!voz_grossa",
@@ -687,31 +687,31 @@
     "nome": "!michael_jackson",
     "id": "af1d2052ea8d441a972ca51a5bf547e4",
     "descricao": "Cantor",
-    "volume": 0
+    "volume": 20
   },
   {
     "nome": "!michael_jackson_2",
     "id": "363fdb8fec3241dd9f8268f25f4f382d",
     "descricao": "Cantor",
-    "volume": 0
+    "volume": 25
   },
   {
     "nome": "!michael_jackson_3",
     "id": "5c8f55c6d56f469f929d81b569eeb127",
     "descricao": "Cantor",
-    "volume": 0
+    "volume": 5
   },
   {
     "nome": "!mano_brown",
     "id": "19a49ec051614f8e93db863f5cd17edf",
     "descricao": "Rapper",
-    "volume": 0
+    "volume": 10
   },
   {
     "nome": "!neymar",
     "id": "2bd0cd1a49474aeab129894f4512e8a6",
     "descricao": "Jogador de futebol",
-    "volume": 0
+    "volume": 20
   },
   {
     "nome": "!cristiano_ronaldo",
@@ -723,19 +723,19 @@
     "nome": "!cortella",
     "id": "07686262fde04028a3a5c3a0c6e7c611",
     "descricao": "Filósofo",
-    "volume": 0
+    "volume": 20
   },
   {
     "nome": "!cortella_2",
     "id": "6e4ca3680611414a97ebf4b9e312c211",
     "descricao": "Filósofo",
-    "volume": 0
+    "volume": 5
   },
   {
     "nome": "!serjão_foguetes",
     "id": "0ba34a9c6d794a73b8ec8f5b53829659",
     "descricao": "Divulgador científico",
-    "volume": 0
+    "volume": 5
   },
   {
     "nome": "!ibere",
@@ -747,19 +747,19 @@
     "nome": "!casimiro",
     "id": "ac1ad6257d8b4df08508f9ce24b39758",
     "descricao": "Streamer",
-    "volume": 0
+    "volume": -5
   },
   {
     "nome": "!super_xandão",
     "id": "1098ba8022ff4127a89e5d2116db2adb",
     "descricao": "Streamer",
-    "volume": 0
+    "volume": -10
   },
   {
     "nome": "!serjão_berranteiro",
     "id": "62e0662807c94e6cb505033c5a7c9a9b",
     "descricao": "Meme da internet",
-    "volume": 0
+    "volume": -5
   },
   {
     "nome": "!away",
@@ -783,7 +783,7 @@
     "nome": "!michael_caio",
     "id": "25e0e359fef14285bec5d780be39ac47",
     "descricao": "De Eu, a Patroa e as Crianças",
-    "volume": 0
+    "volume": 10
   },
   {
     "nome": "!isabela",
@@ -795,6 +795,6 @@
     "nome": "!tiktok",
     "id": "7344de0f70a84483975a5163f2a21837",
     "descricao": "Voz do TikTok",
-    "volume": 0
+    "volume": 10
   }
 ]
