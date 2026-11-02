@@ -150,10 +150,16 @@ de `amostras/`. `/voices` sem `.html` só funciona no GitHub Pages, não no serv
   O arquivo de `!skeeper` foi apagado porque a voz saiu do JSON.
 - Todas as vozes com amostra na Fish foram testadas (18/10): só `!scooby_doo_2` tem a URL pública do
   áudio com 404 — resolvido pelo fallback pra URL assinada no `voices.html`.
-- 17 capas próprias em `covers/` mapeadas no `LOCAL_COVERS` (`!bob_sponja_2` ← `bob_sponja2.png` e
-  `!coringa` ← `joker.png` são os dois casos em que o nome do arquivo difere do nome da voz);
-  as outras 78 vozes continuam com a capa da FishAudio.
+- 37 capas próprias em `covers/` mapeadas no `LOCAL_COVERS` (atualizado em 02/11/2026);
+  `!bob_sponja_2` ← `bob_sponja2.png` e `!coringa` ← `joker.png` são os casos em que o nome do
+  arquivo difere do nome da voz. O mapa tem ainda uma entrada órfã (`brainrot`) sem voz no JSON.
+  As outras 108 vozes continuam com a capa da FishAudio.
 - Pedido repetido: **não fazer varredura em massa na API da FishAudio sem avisar antes** (os
   metadados são gratuitos e sem chave, mas o volume de request chama atenção).
-- Campo `volume` adicionado em 02/11/2026: as 133 vozes começaram com `volume: 0`; os valores são
-  ajustados manualmente pelo usuário no JSON.
+- Campo `volume` adicionado em 02/11/2026: todas as vozes começaram com `volume: 0`; os valores são
+  ajustados manualmente pelo usuário no JSON (aceita negativo, ex.: `-20`, e valores altos, ex.: `100`).
+- **Ordem do JSON**: agrupado por `descricao` — vozes com a mesma descrição ficam em bloco contíguo,
+  na ordem temática definida no arquivo (animes → desenhos → games/filmes → séries → TV/celebridades).
+  A exceção é `!anya`, que fica **sempre como primeiro item**, e `!narrador_picapau`, que fica logo
+  após `!picapau` (mesmo tendo `descricao` "Narrador"). Ao adicionar voz nova, insira no
+  bloco da descrição correspondente, e não no fim do arquivo.
