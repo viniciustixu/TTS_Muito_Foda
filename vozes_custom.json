@@ -910,5 +910,29 @@
     "id": "7344de0f70a84483975a5163f2a21837",
     "descricao": "Voz do TikTok",
     "volume": 10
+  },
+  {
+    "nome": "!pinoquio",
+    "id": "af24c9188cfd4db3bd4102b7774c7e14",
+    "descricao": "De Shrek",
+    "volume": 0
+  },
+  {
+    "nome": "!harry",
+    "id": "03e6eaa7aeb149a1a8d13c166a5d947e",
+    "descricao": "De Harry Potter",
+    "volume": 0
+  },
+  {
+    "nome": "!dumbledore",
+    "id": "09f434f3a5e54e1b9edec38bf056cd27",
+    "descricao": "De Harry Potter",
+    "volume": 0
+  },
+  {
+    "nome": "!hermione",
+    "id": "6666f8a82660455cb125eb8502d5519d",
+    "descricao": "De Harry Potter",
+    "volume": 0
   }
 ]
