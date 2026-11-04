@@ -3,7 +3,7 @@
     "nome": "!anya",
     "id": "ffe41701970d4b339ef7906300716f99",
     "descricao": "De Spy x Family",
-    "volume": 10
+    "volume": 25
   },
   {
     "nome": "!chaves",
@@ -50,6 +50,12 @@
   {
     "nome": "!rochele",
     "id": "898d96e6765e466191e21dbfba19dd99",
+    "descricao": "De Todo Mundo Odeia o Chris",
+    "volume": 0
+  },
+  {
+    "nome": "!greg",
+    "id": "673faf8a9c4142a8b207cf5b9e574015",
     "descricao": "De Todo Mundo Odeia o Chris",
     "volume": 0
   },
@@ -483,7 +489,7 @@
     "nome": "!alvin",
     "id": "97c9af2420154aa4a08d4eff7424b5c0",
     "descricao": "De Alvin e os Esquilos",
-    "volume": 50
+    "volume": 100
   },
   {
     "nome": "!theodore",
@@ -558,6 +564,12 @@
     "volume": 0
   },
   {
+    "nome": "!ziggs",
+    "id": "626c495445e545a7a7c7be1d12d25c2d",
+    "descricao": "De League of Legends",
+    "volume": 0
+  },
+  {
     "nome": "!sonic",
     "id": "020ae7c097e644878745ae909ffaad15",
     "descricao": "De Sonic",
@@ -622,6 +634,18 @@
     "id": "937d6d390f1c4d819fc68455a5ee0609",
     "descricao": "De Breaking Bad",
     "volume": 5
+  },
+  {
+    "nome": "!sam",
+    "id": "cf5bc270f5e54a759d7d496e07874cb8",
+    "descricao": "De Sobrenatural",
+    "volume": 20
+  },
+  {
+    "nome": "!dean",
+    "id": "58cba51bbf174ada85e97b2fa2bc58e5",
+    "descricao": "De Sobrenatural",
+    "volume": 0
   },
   {
     "nome": "!capitao",
@@ -838,6 +862,24 @@
     "id": "bc0b6d0159c744efb2cf5a363ef9f783",
     "descricao": "Youtuber",
     "volume": 10
+  },
+  {
+    "nome": "!jj",
+    "id": "ad8a967fb59943ce928205d0032f1ec8",
+    "descricao": "Youtuber",
+    "volume": 0
+  },
+  {
+    "nome": "!eslen",
+    "id": "f7a46141196545c9aa33ce8dca7b92ad",
+    "descricao": "Youtuber",
+    "volume": 0
+  },
+  {
+    "nome": "!nando_moura",
+    "id": "de2855655ce04bd18bff29e6915410ad",
+    "descricao": "Youtuber",
+    "volume": 0
   },
   {
     "nome": "!serjão_berranteiro",
