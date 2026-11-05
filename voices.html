@@ -87,7 +87,8 @@
       </a>
 
       <div class="border border-amber-500/40 bg-amber-500/10 text-amber-100 rounded-xl px-4 py-3 mb-6">
-        Essas vozes estão disponíveis gratuitamente até o dia 30 de novembro, podendo ter o prazo estendido novamente, como já aconteceu antes.
+        Essas vozes estão disponíveis gratuitamente até o dia 30 de novembro, podendo ter o prazo estendido novamente,
+        como já aconteceu antes.
       </div>
 
       <!-- ---------- como usar ---------- -->
@@ -102,9 +103,7 @@
           Ex.:
           <code class="bg-gray-900 px-2 py-0.5 rounded font-mono">!goku [happy]Oi, eu sou o Goku!</code>
         </p>
-        <p class="text-gray-500 text-sm mt-5 mb-2.5">
-          Experimente algumas Tags:
-        </p>
+        <p class="text-gray-500 text-sm mt-5 mb-2.5">Experimente algumas Tags:</p>
         <div id="emo-groups"></div>
       </div>
 
@@ -176,6 +175,7 @@
         walterwhite: 'covers/walterwhite.png',
         zabuza: 'covers/zabuza.png',
         zerotwo: 'covers/zerotwo.png',
+        monark: 'covers/monark.png',
       };
       const TASK_AUDIO = 'https://platform.r2.fish.audio/task/';
       const CACHE_KEY = 'vozes_meta_v1';
@@ -476,11 +476,83 @@
 
       /* ---------- emoções (lista oficial FishAudio) ---------- */
       const EMO_GROUPS = [
-        ['Emoções', ['happy','sad','angry','excited','calm','nervous','confident','surprised','satisfied','delighted','scared','worried','upset','frustrated','depressed','empathetic','embarrassed','disgusted','moved','proud','relaxed','grateful','curious','sarcastic']],
-        ['Emoções avançadas', ['disdainful','unhappy','anxious','hysterical','indifferent','uncertain','doubtful','confused','disappointed','regretful','guilty','ashamed','jealous','envious','hopeful','optimistic','pessimistic','nostalgic','lonely','bored','contemptuous','sympathetic','compassionate','determined','resigned']],
-        ['Tom', ['in a hurry tone','shouting','screaming','whispering','soft tone','emphasis']],
-        ['Efeitos sonoros', ['laughing','chuckling','sobbing','crying loudly','sighing','groaning','panting','gasping','yawning','snoring','clear throat']],
-        ['Efeitos especiais', ['audience laughing','background laughter','crowd laughing','break','long-break']],
+        [
+          'Emoções',
+          [
+            'happy',
+            'sad',
+            'angry',
+            'excited',
+            'calm',
+            'nervous',
+            'confident',
+            'surprised',
+            'satisfied',
+            'delighted',
+            'scared',
+            'worried',
+            'upset',
+            'frustrated',
+            'depressed',
+            'empathetic',
+            'embarrassed',
+            'disgusted',
+            'moved',
+            'proud',
+            'relaxed',
+            'grateful',
+            'curious',
+            'sarcastic',
+          ],
+        ],
+        [
+          'Emoções avançadas',
+          [
+            'disdainful',
+            'unhappy',
+            'anxious',
+            'hysterical',
+            'indifferent',
+            'uncertain',
+            'doubtful',
+            'confused',
+            'disappointed',
+            'regretful',
+            'guilty',
+            'ashamed',
+            'jealous',
+            'envious',
+            'hopeful',
+            'optimistic',
+            'pessimistic',
+            'nostalgic',
+            'lonely',
+            'bored',
+            'contemptuous',
+            'sympathetic',
+            'compassionate',
+            'determined',
+            'resigned',
+          ],
+        ],
+        ['Tom', ['in a hurry tone', 'shouting', 'screaming', 'whispering', 'soft tone', 'emphasis']],
+        [
+          'Efeitos sonoros',
+          [
+            'laughing',
+            'chuckling',
+            'sobbing',
+            'crying loudly',
+            'sighing',
+            'groaning',
+            'panting',
+            'gasping',
+            'yawning',
+            'snoring',
+            'clear throat',
+          ],
+        ],
+        ['Efeitos especiais', ['audience laughing', 'background laughter', 'crowd laughing', 'break', 'long-break']],
       ];
 
       function bindEmoCopy(scope) {
@@ -496,8 +568,7 @@
 
       function renderEmotions() {
         const wrap = document.getElementById('emo-groups');
-        const BTN =
-          'emo-btn px-3 py-1.5 rounded text-sm font-medium transition-colors ';
+        const BTN = 'emo-btn px-3 py-1.5 rounded text-sm font-medium transition-colors ';
         wrap.innerHTML =
           '<div id="emo-btns" class="flex flex-wrap gap-1.5">' +
           EMO_GROUPS.map(
@@ -508,7 +579,7 @@
               BTN +
               'bg-gray-700 text-gray-200 hover:bg-gray-600 hover:text-white">' +
               label +
-              '</button>'
+              '</button>',
           ).join('') +
           '</div>' +
           '<div id="emo-panel" class="flex flex-wrap gap-1.5 mt-3"></div>';
@@ -528,10 +599,12 @@
           panel.innerHTML = EMO_GROUPS[i][1]
             .map(
               (t) =>
-                '<button type="button" data-tag="[' + t + ']" ' +
+                '<button type="button" data-tag="[' +
+                t +
+                ']" ' +
                 'class="emo bg-gray-900 hover:bg-gray-700 text-gray-200 px-2.5 py-1 rounded text-sm font-mono transition-colors">[' +
                 t +
-                ']</button>'
+                ']</button>',
             )
             .join('');
           bindEmoCopy(panel);
@@ -652,8 +725,7 @@
               const fresh = await resolveUrl(v, true);
               // se o retry devolver a mesma URL (task público com 404, ex.: scooby_doo_2),
               // usa a URL assinada que fetchMeta acabou de guardar em v.audio
-              const retryUrl =
-                fresh.url && fresh.url !== src ? fresh.url : v.audio && v.audio !== src ? v.audio : null;
+              const retryUrl = fresh.url && fresh.url !== src ? fresh.url : v.audio && v.audio !== src ? v.audio : null;
               if (retryUrl) {
                 a.src = retryUrl;
                 a.load();

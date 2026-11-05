@@ -660,6 +660,36 @@
     "volume": 15
   },
   {
+    "nome": "!pinoquio",
+    "id": "af24c9188cfd4db3bd4102b7774c7e14",
+    "descricao": "De Shrek",
+    "volume": 0
+  },
+  {
+    "nome": "!harry",
+    "id": "03e6eaa7aeb149a1a8d13c166a5d947e",
+    "descricao": "De Harry Potter",
+    "volume": 0
+  },
+  {
+    "nome": "!dumbledore",
+    "id": "09f434f3a5e54e1b9edec38bf056cd27",
+    "descricao": "De Harry Potter",
+    "volume": 0
+  },
+  {
+    "nome": "!hermione",
+    "id": "6666f8a82660455cb125eb8502d5519d",
+    "descricao": "De Harry Potter",
+    "volume": 0
+  },
+  {
+    "nome": "!navi",
+    "id": "9c1dfe95a80a4de39897730d8343d714",
+    "descricao": "De Zelda (inglês)",
+    "volume": 15
+  },
+  {
     "nome": "!saocipriano",
     "id": "0b12d715e4c741399594fccb12d4bbe2",
     "descricao": "Narrador",
@@ -882,6 +912,12 @@
     "volume": 0
   },
   {
+    "nome": "!monark",
+    "id": "1dc21c22fef24f9abc4e07d2c56c6190",
+    "descricao": "Youtuber",
+    "volume": -20
+  },
+  {
     "nome": "!serjão_berranteiro",
     "id": "62e0662807c94e6cb505033c5a7c9a9b",
     "descricao": "Meme da internet",
@@ -910,29 +946,5 @@
     "id": "7344de0f70a84483975a5163f2a21837",
     "descricao": "Voz do TikTok",
     "volume": 10
-  },
-  {
-    "nome": "!pinoquio",
-    "id": "af24c9188cfd4db3bd4102b7774c7e14",
-    "descricao": "De Shrek",
-    "volume": 0
-  },
-  {
-    "nome": "!harry",
-    "id": "03e6eaa7aeb149a1a8d13c166a5d947e",
-    "descricao": "De Harry Potter",
-    "volume": 0
-  },
-  {
-    "nome": "!dumbledore",
-    "id": "09f434f3a5e54e1b9edec38bf056cd27",
-    "descricao": "De Harry Potter",
-    "volume": 0
-  },
-  {
-    "nome": "!hermione",
-    "id": "6666f8a82660455cb125eb8502d5519d",
-    "descricao": "De Harry Potter",
-    "volume": 0
   }
 ]
