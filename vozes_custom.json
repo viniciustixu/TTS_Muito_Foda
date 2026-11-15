@@ -126,6 +126,18 @@
     "volume": 0
   },
   {
+    "nome": "!narrador_dragonball",
+    "id": "97dae7d16fe84be995f10d3f29542ba1",
+    "descricao": "De Dragon Ball",
+    "volume": 0
+  },
+  {
+    "nome": "!babidi",
+    "id": "d8e9b9b2b11d4196b2f4ecdb0b660169",
+    "descricao": "De Dragon Ball",
+    "volume": -20
+  },
+  {
     "nome": "!naruto",
     "id": "bcb3ac264a124959a52c762a9ccb4ae2",
     "descricao": "De Naruto",
@@ -270,6 +282,12 @@
     "volume": 0
   },
   {
+    "nome": "!ryuk",
+    "id": "58381c52972d4f26a764ed97cfbeab34",
+    "descricao": "De Death Note",
+    "volume": 0
+  },
+  {
     "nome": "!itoshi_sae",
     "id": "2bb270d0dc344007b53ae25cd00a4e85",
     "descricao": "De Blue Lock",
@@ -290,6 +308,12 @@
   {
     "nome": "!kaiba",
     "id": "7065be6d3c1e477e994b0bd06c46c424",
+    "descricao": "De Yu-Gi-Oh!",
+    "volume": 10
+  },
+  {
+    "nome": "!yugi",
+    "id": "4716326424ce406f97ffdc2fd57b6d6e",
     "descricao": "De Yu-Gi-Oh!",
     "volume": 10
   },
@@ -376,6 +400,12 @@
     "id": "ccfee7542e51426980391b9c6b40a220",
     "descricao": "De Scooby-Doo",
     "volume": 15
+  },
+  {
+    "nome": "!velma",
+    "id": "a46fcc665b474d8cbc03d899b14147bd",
+    "descricao": "De Scooby-Doo",
+    "volume": 0
   },
   {
     "nome": "!pernalonga",
@@ -480,6 +510,12 @@
     "volume": 20
   },
   {
+    "nome": "!buzz",
+    "id": "3d12f7ea5f8a44fa89cf8d644a2bf46a",
+    "descricao": "De Toy Story",
+    "volume": 0
+  },
+  {
     "nome": "!madagascar",
     "id": "cfd8b26a1be648b89c65fe060d85fda7",
     "descricao": "De Madagascar",
@@ -501,6 +537,18 @@
     "nome": "!dora",
     "id": "4cad4fb6e32843d9808175db9fba23f8",
     "descricao": "De Dora a Aventureira",
+    "volume": 0
+  },
+  {
+    "nome": "!gwen_tenysson",
+    "id": "3c3cb1c28d0c49b4bd9536673debd5a2",
+    "descricao": "De Ben 10",
+    "volume": 0
+  },
+  {
+    "nome": "!irmão_do_jorel",
+    "id": "d23feddf3ac24550b05baff5a5cb31e8",
+    "descricao": "De Irmão do Jorel",
     "volume": 0
   },
   {
@@ -570,10 +618,22 @@
     "volume": 0
   },
   {
+    "nome": "!evellyn",
+    "id": "73af1c6b921244eaad53679c204344fd",
+    "descricao": "De League of Legends",
+    "volume": 0
+  },
+  {
     "nome": "!sonic",
     "id": "020ae7c097e644878745ae909ffaad15",
     "descricao": "De Sonic",
     "volume": 20
+  },
+  {
+    "nome": "!eggman",
+    "id": "23e8605e2cd74496afcc4a2c2ff03b9b",
+    "descricao": "De Sonic",
+    "volume": 0
   },
   {
     "nome": "!geralt",
@@ -630,10 +690,28 @@
     "volume": 0
   },
   {
+    "nome": "!trem_bala",
+    "id": "82037facb8304a0784d7fdd5e947ceb0",
+    "descricao": "De The Boys",
+    "volume": 0
+  },
+  {
     "nome": "!walterwhite",
     "id": "937d6d390f1c4d819fc68455a5ee0609",
     "descricao": "De Breaking Bad",
     "volume": 5
+  },
+  {
+    "nome": "!house",
+    "id": "7a7e8f0d7b7b4e45847ef3347c2dcebc",
+    "descricao": "De Dr. House",
+    "volume": 0
+  },
+  {
+    "nome": "!tommy_shelby",
+    "id": "1f7d1a6f54dd4e46961146ba5881b475",
+    "descricao": "De Peaky Blinders",
+    "volume": 0
   },
   {
     "nome": "!sam",
@@ -681,6 +759,12 @@
     "nome": "!hermione",
     "id": "6666f8a82660455cb125eb8502d5519d",
     "descricao": "De Harry Potter",
+    "volume": 0
+  },
+  {
+    "nome": "!will_smith",
+    "id": "35188e2b0b5f45669cca2193a7ad06d6",
+    "descricao": "De Eu sou a Lenda",
     "volume": 0
   },
   {
@@ -756,6 +840,12 @@
     "volume": 0
   },
   {
+    "nome": "!alborghetti",
+    "id": "728eace9bf9744ad9392866a1bcf6797",
+    "descricao": "Apresentador de TV",
+    "volume": 0
+  },
+  {
     "nome": "!sbt",
     "id": "01e164e5bebc4adbbd5ea6168ea188fb",
     "descricao": "Emissora de TV",
@@ -765,6 +855,12 @@
     "nome": "!galvao_bueno",
     "id": "7fe10a00249247aabb495bae57ac80e1",
     "descricao": "Narrador esportivo",
+    "volume": 0
+  },
+  {
+    "nome": "!craque_neto",
+    "id": "f996e8f8f2f24f1282e134802e4602c7",
+    "descricao": "Comentarista esportivo",
     "volume": 0
   },
   {
@@ -918,6 +1014,24 @@
     "volume": -20
   },
   {
+    "nome": "!felipe_neto",
+    "id": "bae3f4960a0441c7a47b90bc1fac6cf7",
+    "descricao": "Youtuber",
+    "volume": 0
+  },
+  {
+    "nome": "!luan_gameplays",
+    "id": "85580769055e4bb4a1e59e12faebe0aa",
+    "descricao": "Youtuber",
+    "volume": -20
+  },
+  {
+    "nome": "!luva",
+    "id": "9a98c1e05381497da674a47015f6daed",
+    "descricao": "Youtuber",
+    "volume": 0
+  },
+  {
     "nome": "!serjão_berranteiro",
     "id": "62e0662807c94e6cb505033c5a7c9a9b",
     "descricao": "Meme da internet",
@@ -926,6 +1040,12 @@
   {
     "nome": "!away",
     "id": "73a52b2201ae48cf805cb4e7fbfedf2b",
+    "descricao": "Humorista",
+    "volume": 0
+  },
+  {
+    "nome": "!tiringa",
+    "id": "4636a1c0def9459da61b403145d7ec98",
     "descricao": "Humorista",
     "volume": 0
   },

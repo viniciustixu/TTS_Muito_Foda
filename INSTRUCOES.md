@@ -142,18 +142,19 @@ de `amostras/`. `/voices` sem `.html` só funciona no GitHub Pages, não no serv
 - Não commitar o `.env` nem `amostras/` com lixo de teste.
 - Não trocar as URLs dos CDNs sem testar (são os hosts públicos da FishAudio).
 
-## Estado conhecido (atualizado em 18/10/2026)
+## Estado conhecido (atualizado em 14/11/2026)
 
-- 95 vozes no JSON; 94 com amostra pronta na FishAudio (`samples > 0`) e 1 sem:
+- 178 vozes no JSON; 177 com amostra pronta na FishAudio (`samples > 0`) e 1 sem:
   `!michael_jackson`.
 - Amostras locais em `amostras/`: só `af1d2052ea8d441a972ca51a5bf547e4.mp3` (`!michael_jackson`).
   O arquivo de `!skeeper` foi apagado porque a voz saiu do JSON.
-- Todas as vozes com amostra na Fish foram testadas (18/10): só `!scooby_doo_2` tem a URL pública do
-  áudio com 404 — resolvido pelo fallback pra URL assinada no `voices.html`.
-- 37 capas próprias em `covers/` mapeadas no `LOCAL_COVERS` (atualizado em 02/11/2026);
+- As 20 vozes novas foram conferidas na FishAudio em 14/11/2026: todas têm amostra pronta; 3 delas
+  (`!gwen_tenysson`, `!evellyn`, `!irmão_do_jorel`) têm a URL pública do áudio com 404 (mesmo caso
+  do `!scooby_doo_2`), resolvido pelo fallback pra URL assinada no `voices.html`.
+- 49 capas próprias em `covers/` mapeadas no `LOCAL_COVERS` (atualizado em 14/11/2026);
   `!bob_sponja_2` ← `bob_sponja2.png` e `!coringa` ← `joker.png` são os casos em que o nome do
-  arquivo difere do nome da voz. O mapa tem ainda uma entrada órfã (`brainrot`) sem voz no JSON.
-  As outras 108 vozes continuam com a capa da FishAudio.
+  arquivo difere do nome da voz. `covers/brainrot.png` está sem voz correspondente e não está mais
+  no mapa. As outras 129 vozes continuam com a capa da FishAudio.
 - Pedido repetido: **não fazer varredura em massa na API da FishAudio sem avisar antes** (os
   metadados são gratuitos e sem chave, mas o volume de request chama atenção).
 - Campo `volume` adicionado em 02/11/2026: todas as vozes começaram com `volume: 0`; os valores são
