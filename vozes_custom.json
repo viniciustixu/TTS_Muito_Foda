@@ -27,7 +27,7 @@
     "nome": "!kiko",
     "id": "82ac332bc1c141d08cc61fd0f0d6547a",
     "descricao": "De Chaves",
-    "volume": 0
+    "volume": 50
   },
   {
     "nome": "!dona_florinda",
@@ -513,7 +513,7 @@
     "nome": "!buzz",
     "id": "3d12f7ea5f8a44fa89cf8d644a2bf46a",
     "descricao": "De Toy Story",
-    "volume": 0
+    "volume": 100
   },
   {
     "nome": "!madagascar",
@@ -675,7 +675,7 @@
     "nome": "!coringa",
     "id": "fade11b01b5a4e43bb70e618c3e28662",
     "descricao": "Da DC Comics",
-    "volume": 15
+    "volume": 100
   },
   {
     "nome": "!jarvis",
@@ -747,7 +747,7 @@
     "nome": "!harry",
     "id": "03e6eaa7aeb149a1a8d13c166a5d947e",
     "descricao": "De Harry Potter",
-    "volume": 0
+    "volume": 100
   },
   {
     "nome": "!dumbledore",
@@ -759,7 +759,7 @@
     "nome": "!hermione",
     "id": "6666f8a82660455cb125eb8502d5519d",
     "descricao": "De Harry Potter",
-    "volume": 0
+    "volume": 100
   },
   {
     "nome": "!will_smith",
