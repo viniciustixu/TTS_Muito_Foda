@@ -507,7 +507,7 @@
     "nome": "!mcqueen",
     "id": "0f8ff557a0f04d8b86fcb8a9212a86dc",
     "descricao": "De Carros",
-    "volume": 20
+    "volume": 70
   },
   {
     "nome": "!buzz",
@@ -687,7 +687,7 @@
     "nome": "!patria",
     "id": "6c39429a74cb47e1b45f70023f7abf06",
     "descricao": "De The Boys",
-    "volume": 0
+    "volume": 50
   },
   {
     "nome": "!trem_bala",
@@ -711,7 +711,7 @@
     "nome": "!tommy_shelby",
     "id": "1f7d1a6f54dd4e46961146ba5881b475",
     "descricao": "De Peaky Blinders",
-    "volume": 0
+    "volume": 100
   },
   {
     "nome": "!sam",
@@ -736,6 +736,12 @@
     "id": "e8d514263b0e46bcba8efeec1b0b25fc",
     "descricao": "De O Senhor dos Anéis",
     "volume": 15
+  },
+  {
+    "nome": "!gato_de_botas",
+    "id": "b18baf86ca274952ae64e3dc53f70698",
+    "descricao": "De Shrek",
+    "volume": 0
   },
   {
     "nome": "!pinoquio",
@@ -765,7 +771,7 @@
     "nome": "!will_smith",
     "id": "35188e2b0b5f45669cca2193a7ad06d6",
     "descricao": "De Eu sou a Lenda",
-    "volume": 0
+    "volume": 100
   },
   {
     "nome": "!navi",
@@ -909,7 +915,7 @@
     "nome": "!manoel_gomes",
     "id": "d59d1a4c50d642b388c2a083f8b2a2d7",
     "descricao": "Cantor",
-    "volume": 0
+    "volume": 100
   },
   {
     "nome": "!michael_jackson",
@@ -951,13 +957,13 @@
     "nome": "!cortella",
     "id": "07686262fde04028a3a5c3a0c6e7c611",
     "descricao": "Filósofo",
-    "volume": 20
+    "volume": 100
   },
   {
     "nome": "!cortella_2",
     "id": "6e4ca3680611414a97ebf4b9e312c211",
     "descricao": "Filósofo",
-    "volume": 5
+    "volume": 100
   },
   {
     "nome": "!serjão_foguetes",
@@ -1002,6 +1008,12 @@
     "volume": 0
   },
   {
+    "nome": "!davy_jones",
+    "id": "d719b549de9940eabf541769a1ce292e",
+    "descricao": "Youtuber",
+    "volume": 0
+  },
+  {
     "nome": "!eslen",
     "id": "f7a46141196545c9aa33ce8dca7b92ad",
     "descricao": "Youtuber",
@@ -1042,6 +1054,13 @@
     "id": "62e0662807c94e6cb505033c5a7c9a9b",
     "descricao": "Meme da internet",
     "volume": -5
+  },
+
+  {
+    "nome": "!carlinhos",
+    "id": "ac2c4547fcc5421bbfb1ae8bee61cdba",
+    "descricao": "Meme da internet",
+    "volume": 0
   },
   {
     "nome": "!away",
