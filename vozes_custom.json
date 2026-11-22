@@ -1055,7 +1055,6 @@
     "descricao": "Meme da internet",
     "volume": -5
   },
-
   {
     "nome": "!carlinhos",
     "id": "ac2c4547fcc5421bbfb1ae8bee61cdba",
@@ -1091,5 +1090,11 @@
     "id": "7344de0f70a84483975a5163f2a21837",
     "descricao": "Voz do TikTok",
     "volume": 10
+  },
+  {
+    "nome": "!youtube",
+    "id": "b953a0d114fc4aa2b67c3e29cb8a08fc",
+    "descricao": "Meme das lives",
+    "volume": 0
   }
 ]
