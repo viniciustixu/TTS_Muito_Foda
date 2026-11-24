@@ -4,13 +4,13 @@ Sistema de Text-to-Speech para chat ao vivo do YouTube com suporte a ElevenLabs 
 
 ## Download
 
-Baixe a versão mais recente em [TTS_v2.0.3.zip](https://viniciustixu.github.io/TTS_Muito_Foda/home).
+Baixe a versão mais recente em [TTS_v3.3.1.zip](https://viniciustixu.github.io/TTS_Muito_Foda/home).
 
 ## Funcionalidades
 
 - Leitura de chat ao vivo do YouTube via API
 - Sintetização de voz com ElevenLabs (vozes variadas)
-- Fallback automático para edge-tts (Thalita, português BR)
+- Fallback automático para edge-tts (Thalita, Antônio ou Francisca, português BR)
 - Suporte a múltiplas chaves de API com rodízio automático
 - Barra de progresso do consumo de caracteres ElevenLabs
 - Controle de volume com scroll do mouse
@@ -19,7 +19,7 @@ Baixe a versão mais recente em [TTS_v2.0.3.zip](https://viniciustixu.github.io/
 - Filtro de palavras banidas
 - Prefixo opcional para filtrar mensagens
 - Detecção de risadas com áudio personalizado
-- Modo "apenas Thalita" (edge-tts sem ElevenLabs)
+- Modo "apenas Edge" (edge-tts sem ElevenLabs, com Thalita, Antônio ou Francisca)
 - Persistência de configurações
 - Prevenção de múltiplas instâncias
 - Janela redimensionável
