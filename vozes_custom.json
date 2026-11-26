@@ -9,13 +9,13 @@
     "nome": "!chaves",
     "id": "1b33bafff1f148539bfb06344126b25a",
     "descricao": "De Chaves",
-    "volume": 10
+    "volume": 100
   },
   {
     "nome": "!chaves_2",
     "id": "8548d3e9d4e74482a648a7c276d89294",
     "descricao": "De Chaves",
-    "volume": 0
+    "volume": 100
   },
   {
     "nome": "!seu_madruga",
@@ -60,6 +60,12 @@
     "volume": 0
   },
   {
+    "nome": "!zacarias",
+    "id": "477ac709f92d473eb305bc00a8b842e9",
+    "descricao": "De Os Trapalhões",
+    "volume": 0
+  },
+  {
     "nome": "!picapau",
     "id": "5160b0e8ca854d7e94403b2500ee582b",
     "descricao": "De Pica-Pau",
@@ -69,6 +75,30 @@
     "nome": "!narrador_picapau",
     "id": "c9a66cf48edb41bfb2f6e781d021ed5b",
     "descricao": "Narrador",
+    "volume": 0
+  },
+  {
+    "nome": "!leoncio",
+    "id": "c1b473938ac3410b90389c6ad079f7a4",
+    "descricao": "De Pica-Pau",
+    "volume": 30
+  },
+  {
+    "nome": "!dooley",
+    "id": "51707cc7bfa040f186cabf89ffe41e35",
+    "descricao": "De Pica-Pau",
+    "volume": 30
+  },
+  {
+    "nome": "!ranheta",
+    "id": "56cd99bc621c44098cc1cbd72a578fde",
+    "descricao": "De Pica-Pau",
+    "volume": 0
+  },
+  {
+    "nome": "!ze_jacare",
+    "id": "b70e532971ab4a618401b170ad3c226c",
+    "descricao": "De Pica-Pau",
     "volume": 0
   },
   {
@@ -84,7 +114,7 @@
     "volume": 0
   },
   {
-    "nome": "!srsirigueijo",
+    "nome": "!sirigueijo",
     "id": "feb8db8e9f364804a7759663359a483e",
     "descricao": "De Bob Esponja",
     "volume": 15
@@ -122,6 +152,18 @@
   {
     "nome": "!freezaptpt",
     "id": "aa93d0a7223f4dcdbede634e35156933",
+    "descricao": "De Dragon Ball",
+    "volume": 0
+  },
+  {
+    "nome": "!freeza",
+    "id": "3173a6f65bb44479be322e001b0ff2a2",
+    "descricao": "De Dragon Ball",
+    "volume": 50
+  },
+  {
+    "nome": "!piccolo",
+    "id": "c1a2624e350042f693becb8ef0aa02f3",
     "descricao": "De Dragon Ball",
     "volume": 0
   },
@@ -522,6 +564,12 @@
     "volume": 0
   },
   {
+    "nome": "!sid",
+    "id": "b7526c8f9c5740cc9c9cfd2b73f0243b",
+    "descricao": "De A Era do Gelo",
+    "volume": 100
+  },
+  {
     "nome": "!alvin",
     "id": "97c9af2420154aa4a08d4eff7424b5c0",
     "descricao": "De Alvin e os Esquilos",
@@ -584,6 +632,12 @@
   {
     "nome": "!alice",
     "id": "2e7633e6dcdc40238d172e55e231b73b",
+    "descricao": "De Resident Evil",
+    "volume": 0
+  },
+  {
+    "nome": "!mercador",
+    "id": "d0685ee51451496f8bdb1ffb533bb7b4",
     "descricao": "De Resident Evil",
     "volume": 0
   },
@@ -848,6 +902,18 @@
   {
     "nome": "!alborghetti",
     "id": "728eace9bf9744ad9392866a1bcf6797",
+    "descricao": "Apresentador de TV",
+    "volume": 0
+  },
+  {
+    "nome": "!jacquin",
+    "id": "114f861566fd4647bea2a424cfaab2b7",
+    "descricao": "Apresentador de TV",
+    "volume": 0
+  },
+  {
+    "nome": "!ratinho",
+    "id": "2b37a7d6807345e4a2242408fc8bbfa2",
     "descricao": "Apresentador de TV",
     "volume": 0
   },
